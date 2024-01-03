@@ -30,3 +30,10 @@ They're seeking a solution for these problem so that they can remain organized a
 1. Customer Interaction and Data Entry
     - Enters new customer information or retrieves existing customer profiles during interactions.
     - Updates customer profiles with recent interactions, inquiries, or feedback.
+2. Order and Service Request Processing:
+    - Customer service representatives use the CRM to process new orders and service requests.
+    - Assigns tasks to the relevant department (e.g., engineering, installation teams).
+    - Updates the order status and communicates timelines to customers.
+3. Reporting and Analytics:
+    - Management uses CRM's reporting tools to analyze customer interactions, sales efficiency, and contract status.
+    - Generates custom reports to gain insights into business performance and areas for improvement.
