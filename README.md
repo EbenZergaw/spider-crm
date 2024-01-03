@@ -24,3 +24,9 @@ The company's operations revolve around sourcing materials and products to meet 
 The company employees roughly 100 people whose job functions range from engineering to sales and marketing. 
 As HydroTech's operations scale, they've been struggled to manage and keep track of their customers, contracts, and tenders. In addition to incoming deals, HydroTech also has to keep up with previous customer relationships for maintenance, processing orders, and installations.
 They're seeking a solution for these problem so that they can remain organized and provide satisfactory service for their customers.
+
+## Use Cases
+
+1. Customer Interaction and Data Entry
+    - Enters new customer information or retrieves existing customer profiles during interactions.
+    - Updates customer profiles with recent interactions, inquiries, or feedback.
