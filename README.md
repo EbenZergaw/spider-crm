@@ -14,23 +14,33 @@ For this project, I will:
 - Build a functional full-stack product
 - Test and review the application
 
-The reason I chose to build a CRM is for various reasons. Firstly, CRMs are good businesses. The recurring revenue that comes from high-value clients leads to a massive life-time value per customer. Another reason why I'm choosing to build a CRM is because I have an interest in enterprise software. I want to become proficient in creating technological value for businesses and I figured this is a good side project for that goal.
+The reason I chose to build a CRM is for various reasons. Firstly, it is because I have an interest in enterprise software. I want to become proficient in creating technological value for businesses and I figured this is a good side project for that goal.
+Secondly, CRMs are good businesses. The recurring revenue that comes from high-value clients leads to a massive life-time value per customer. 
 
-My intention for this project is to learn and practice my skills. CRMs can be very robust and complicated pieces of software. There is a million directions I could go in with this project. For the sake of simplicity, I will be developing the absolute minimum core features of a B2B CRM. I will not bother with integrations or customizations as this project is not going into production, it is simply an exploration of different ways to build software. 
+My intention for this project is to learn and practice my skills across the board. CRMs can be very robust and complicated pieces of software. There is a million directions I could go in with this project. For the sake of simplicity, I will be developing the absolute minimum core features of a B2B CRM. I will not bother with integrations or customizations as this project is not going into production, it is simply an exploration of different ways to build software and the process of doing so.
+
+I think software should be developed in the context of the problem it solves, so I'll begin this project by creating a case that provides the context to inform my development.
 
 ## Personas
 HydroTech Imports Co. is an established company that imports and distributes water pumps, casings, and generators. The company has carved a niche in bridging international manufacturing with the local market's needs, focusing on the industrial, agricultural, and residential sectors.
+
 The company's operations revolve around sourcing materials and products to meet the demands of the agriculture, manufacturing, and real estate industries. Additionally, HydroTech competes in tenders to win contracts for large scale projects in both the private and the public sector.
+
 The company employees roughly 100 people whose job functions range from engineering to sales and marketing. 
 As HydroTech's operations scale, they've been struggled to manage and keep track of their customers, contracts, and tenders. In addition to incoming deals, HydroTech also has to keep up with previous customer relationships for maintenance, processing orders, and installations.
 They're seeking a solution for these problem so that they can remain organized and provide satisfactory service for their customers.
 
 ## Use Cases
+The product will be used by HydroTech's management, customer service, and sales team for managing client relations, work flows, and tasks. Each stakeholder will have a different use case.
+
+- Management wants to view, create, and update tasks to manage the other departments.
+- Customer service wants to register, update, and track clients and their history with the firm
+- Sales wants 
 
 1. Customer Interaction and Data Entry
     - Enters new customer information or retrieves existing customer profiles during interactions.
     - Updates customer profiles with recent interactions, inquiries, or feedback.
-2. Order and Service Request Processing:
+2. Task Management:
     - Customer service representatives use the CRM to process new orders and service requests.
     - Assigns tasks to the relevant department (e.g., engineering, installation teams).
     - Updates the order status and communicates timelines to customers.
