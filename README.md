@@ -37,8 +37,8 @@ The product will be used by HydroTech's management, customer service, and sales 
     - Process new orders and service requests.
     - Enter new customer information or retrieves existing customer profiles during interactions.
     - Update customer profiles with recent interactions, inquiries, or feedback.
-2. Task Management:
-    - Assigns tasks to the relevant department.
+2. Project Management:
+    - Create and assign tasks for current orders to relevant departments.
     - View and complete current tasks.
     - Updates the order status and communicate timelines to customers.
 3. Reporting and Analytics:
@@ -46,18 +46,54 @@ The product will be used by HydroTech's management, customer service, and sales 
     - View reports to gain insights into business performance and areas for improvement.
 
 ## Abstractions
-With the persona, problem, and use cases scoped out, my next steps are to translate them into features, components, and a mapped out user journey. By reducing the abstractions of the use cases, I can have a specific and tangible reference for development.
+With the persona, problem, and use cases scoped out, my next steps are to translate them into features, components, and a mapped out user journey. By reducing the abstractions of the use cases to a granular level, I can have a specific and tangible reference for developing the data layer, frontend, and interactions of all the components of the CRM.
 
 I'll assign an identifier for each use case and expand upon the users actions, the system behavior, and the components related to it.
+The users in these cases are the sales, customer service, and management team of HydroTech, with the customers being their clients.
 
 ### Use Case 1: Customer Interaction and Data Entry
-**a) Process new orders and service requests**
-- When a customer calls for a new order, the user would create a new order in the system
-- Each order would include:
- - Customer data
+**1.a) Creating New Orders and Service Requests**
+When a customer calls for a new order, whether its for purchasing new products or for a service request, the user would create a new order in the system. 
+Each ORDER would include:
+ - Customer data - Selecting a preexisting customer, or creating a new one
+ - Order Type - If its a service request or a product purchase
  - Items ordered
  - Quantity ordered
  - Unit price
  - Total price
- - Delivery 
+ - Date Created
+ - Status - The current status of the order
+ - Tasks - The tasks associated with that order
+ - Details - A section to type notes regarding the order
+ - Delivery Date
+**1.b) Entering New Customer Information**
+When a new customer interacts with the company, the user will enter the customers data into the system.
+Each CUSTOMER would include:
+- Company Name
+- Contact Name
+- Phone Numbers
+- Email
+- Stage - The stage the customer is at within the sales cycle (prospect, qualified lead, closed, etc)
+- Orders
+- Date 
+- Location
+- Details - A section to type notes regarding the customer
+**1.c) Viewing and Retrieving Customer Data**
+When the user is creating a new order or viewing customer data, the system will return their information.
+**1.d) Updating Customer Information**
+If a change occurs, such as a company contact changes their number or moves to a new location, the user will update that information accordingly in the system.
+
+
+## Use Case 2: Project Management
+**2.a) Creating and Assigning Tasks**
+After a new order has been created in the system, the user can create tasks for that order and assign it to specific individuals or departments.
+Each TASK will include:
+- Task Name
+- Status (Not Started, In Progress, Completed)
+- Assignee
+- Priority (Low, Medium, High)
+- Deadline
+- Details - A section to type notes regarding that task
+**2.b) Viewing and Completing Tasks**
+Users can view all the tasks and orders  
 
