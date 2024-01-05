@@ -223,3 +223,8 @@ Now that the use cases are granularized, I have a much clearer idea of the data 
 | ----------- | ----------- | x | x |
 | Header | Title | x | x |
 | Paragraph | Text | x | x |
+
+| Syntax | Description |
+| ----------- | ----------- |
+| Header | Title |
+| Paragraph | Text |
