@@ -73,7 +73,7 @@ When a new customer interacts with the company, the user will enter the customer
 Each CUSTOMER would include:
 - Company Name
 - Contact Name
-- Phone Numbers
+- Phone Number
 - Email
 - Stage - The stage the customer is at within the sales cycle (prospect, qualified lead, closed, etc)
 - Orders
@@ -140,4 +140,38 @@ Users can view their total revenue, receivable revenue, and the orders associate
 
 ## The Data Layer
 Now that the use cases are granularized, I have a much clearer idea of the data the system will be handling. I can now plan the schemas and API endpoints that will be the backbone of the CRM.
+
 ### Customer Schema
+- customerID - String
+- companyName - String
+- contactName - String
+- phoneNumber - String
+- email - String
+- Stage - Enum {
+    PROSPECTING,
+    QUALIFIED,
+    PRESENTING,
+    PROCESSING,
+    CLOSED
+}
+- orders - Array of Orders
+- date - Date 
+- location - String
+- details - String
+
+### Order Schema
+- orderID - String
+- customerID - String
+- orderType - String
+- status - Enum {
+    
+}
+- Tasks - The tasks associated with that order
+- Details - A section to type notes regarding the order
+- Delivery Date
+
+- Items ordered
+- Quantity ordered
+- Unit price
+- Total price
+- Date Created
