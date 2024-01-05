@@ -67,6 +67,7 @@ Each ORDER would include:
  - Tasks - The tasks associated with that order
  - Details - A section to type notes regarding the order
  - Delivery Date
+
 **1.b) Entering New Customer Information**
 When a new customer interacts with the company, the user will enter the customers data into the system.
 Each CUSTOMER would include:
@@ -79,8 +80,10 @@ Each CUSTOMER would include:
 - Date 
 - Location
 - Details - A section to type notes regarding the customer
+
 **1.c) Viewing and Retrieving Customer Data**
 When the user is creating a new order or viewing customer data, the system will return their information.
+
 **1.d) Updating Customer Information**
 If a change occurs or the customer moves along the sales stages, the user will update that information accordingly in the system.
 
@@ -96,6 +99,7 @@ Each TASK will include:
 - Priority (Low, Medium, High)
 - Deadline
 - Details - A section to type notes regarding that task
+
 **2.b) Viewing Tasks and Orders**
 Users can view all tasks and orders in the system and sort or filter them however they need to. 
 TASKS can be sorted or filtered by:
@@ -110,6 +114,7 @@ ORDERS can be sorted or filtered by:
 - Delivery Date
 - Total Price
 - Status
+
 **2.c) Completing Tasks**
 Users can change the status of a TASK as they work on it.
 - Not Started
@@ -126,8 +131,10 @@ Additonally, users can also change the status of an ORDER directly.
 ### Use Case 3: Reporting and Analytics
 **3.a) Viewing All Customer Information**
 Users will be able to view all their customers in one table.
+
 **3.b) Viewing Individual Customer Information**
 Users will also be able to view individual customers alongside all their orders.
+
 **3.c) Viewing Sales Data and Order History**
 Users can view their total revenue, receivable revenue, and the orders associated with them.
 
