@@ -219,10 +219,10 @@ Now that the use cases are granularized, I have a much clearer idea of the data 
 - details - String
 
 ## API Endpoints
-| Use Case ID | Description | Resource | Endpoint |
-| ----------- | ----------- | -----------  | -----------  |
-| Header | Title | x | x |
-| Paragraph | Text | x | x |
+| Use Case ID | Description | Resource    | Endpoint    |
+| ----------- | ----------- | ----------- | ----------- |
+| Header      | Title       | x           | x           |
+| Paragraph   | Text        | x           | x           |
 
 | Syntax | Description |
 | ----------- | ----------- |
