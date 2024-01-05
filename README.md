@@ -89,11 +89,21 @@ If a change occurs, such as a company contact changes their number or moves to a
 After a new order has been created in the system, the user can create tasks for that order and assign it to specific individuals or departments.
 Each TASK will include:
 - Task Name
+- Order
 - Status (Not Started, In Progress, Completed)
 - Assignee
 - Priority (Low, Medium, High)
 - Deadline
 - Details - A section to type notes regarding that task
-**2.b) Viewing and Completing Tasks**
-Users can view all the tasks and orders  
+**2.b) Viewing Tasks and Projects**
+Users can view all tasks and orders in the system and sort or filter them however they need to. 
+Users can sort or filter TASKS by:
+- Status
+- Order
+- Assignee
+- Priority
+- Deadline
+ORDERS can be sorted or filtered by:
+- Company
+- Date
 
