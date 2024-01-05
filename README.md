@@ -31,18 +31,16 @@ As HydroTech's operations scale, they've been struggled to manage and keep track
 They're seeking a solution for these problem so that they can remain organized and provide satisfactory service for their customers.
 
 ## Use Cases
-The product will be used by HydroTech's management, customer service, and sales team for managing client relations, work flows, and tasks. Each stakeholder will have a different use case.
-
-- Management wants to view, create, and update tasks to manage the other departments.
-- Customer service wants to register, update, and track clients and their history with the firm
-- Sales wants 
+The product will be used by HydroTech's management, customer service, and sales team for managing client relations, work flows, and tasks. 
 
 1. Customer Interaction and Data Entry
-    - Enters new customer information or retrieves existing customer profiles during interactions.
-    - Updates customer profiles with recent interactions, inquiries, or feedback.
+Customer service representatives use the CRM to:
+    - Process new orders and service requests.
+    - Enter new customer information or retrieves existing customer profiles during interactions.
+    - Update customer profiles with recent interactions, inquiries, or feedback.
 2. Task Management:
-    - Customer service representatives use the CRM to process new orders and service requests.
-    - Assigns tasks to the relevant department (e.g., engineering, installation teams).
+    - Management assigns tasks to the relevant department (e.g., engineering, installation teams).
+    - Departments would view 
     - Updates the order status and communicates timelines to customers.
 3. Reporting and Analytics:
     - Management uses CRM's reporting tools to analyze customer interactions, sales efficiency, and contract status.
