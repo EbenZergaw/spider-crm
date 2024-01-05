@@ -131,6 +131,11 @@ Additonally, users can also change the status of an ORDER directly.
 ### Use Case 3: Reporting and Analytics
 **3.a) Viewing All Customer Information**
 Users will be able to view all their customers in one table.
+They will also be able to filter and sort their customers by:
+- Stage
+- Date
+- Orders
+- Revenue Generated
 
 **3.b) Viewing Individual Customer Information**
 Users will also be able to view individual customers alongside all their orders.
@@ -147,12 +152,13 @@ Now that the use cases are granularized, I have a much clearer idea of the data 
 - contactName - String
 - phoneNumber - String
 - email - String
-- Stage - Enum {
+- stage - Enum {
     PROSPECTING,
     QUALIFIED,
     PRESENTING,
     PROCESSING,
-    CLOSED
+    CLOSED_WON,
+    CLOSED_LOST
 }
 - orders - Array of Orders
 - date - Date 
@@ -160,17 +166,27 @@ Now that the use cases are granularized, I have a much clearer idea of the data 
 - details - String
 
 ### Order Schema
+`
 - orderID - String
 - customerID - String
-- orderType - String
-- status - Enum {
-    
+- orderType - Enum {
+    SERVICE,
+    PRODUCTS
 }
-- Tasks - The tasks associated with that order
-- Details - A section to type notes regarding the order
-- Delivery Date
+- status - Enum {
+    NOT_STARTED,
+    IN_PROGRESS,
+    COMPLETED,
+    CANCELLED
+}
+- tasks - Array of Tasks
+- Details - String
+- Delivery Date - String
+`
 
-- Items ordered
+### ProductsOrder Schema
+- **Extends Order**
+- itemsOrdered
 - Quantity ordered
 - Unit price
 - Total price
