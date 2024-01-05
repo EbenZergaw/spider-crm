@@ -82,7 +82,7 @@ Each CUSTOMER would include:
 - Details - A section to type notes regarding the customer
 
 **1.c) Viewing and Retrieving Customer Data**
-When the user is creating a new order or viewing customer data, the system will return their information.
+When the user is creating a new order for a customer, searching for a customer, or viewing customer data, the system will return their information.
 
 **1.d) Updating Customer Information**
 If a change occurs or the customer moves along the sales stages, the user will update that information accordingly in the system.
@@ -111,6 +111,7 @@ TASKS can be sorted or filtered by:
 ORDERS can be sorted or filtered by:
 - Company
 - Date
+- Type
 - Delivery Date
 - Total Price
 - Status
@@ -166,9 +167,8 @@ Now that the use cases are granularized, I have a much clearer idea of the data 
 - details - String
 
 ### Order Schema
-``
 - orderID - String
-- customerID - String
+- customerID - Customer customerID
 - orderType - Enum {
     SERVICE,
     PRODUCTS
@@ -182,12 +182,37 @@ Now that the use cases are granularized, I have a much clearer idea of the data 
 - tasks - Array of Tasks
 - Details - String
 - Delivery Date - String
-``
 
 ### ProductsOrder Schema
 - **Extends Order**
-- itemsOrdered
-- Quantity ordered
-- Unit price
-- Total price
-- Date Created
+- items - Json {
+    {
+        itemName: String,
+        quantity: Int,
+        unitPrice: Int
+    },
+    ...
+}
+- totalPrice - Int
+- Date - Date
+
+### ServiceOrder Schema
+- **Extends Order**
+- TODO
+
+### Task Schema
+- taskID - String
+- orderID - Order orderID
+- status Enum {
+    NOT_STARTED,
+    IN_PROGRESS,
+    COMPLETED
+}
+- assignee - String
+- priority - Enum {
+    LOW,
+    MEDIUM,
+    HIGH
+}
+- deadline - Date
+- details - String
