@@ -40,10 +40,11 @@ The product will be used by HydroTech's management, customer service, and sales 
 2. Project Management:
     - Create and assign tasks for current orders to relevant departments.
     - View and complete current tasks.
-    - Updates the order status and communicate timelines to customers.
+    - View and complete orders.
 3. Reporting and Analytics:
-    - Analyze customer interactions, sales data, and project statuses.
-    - View reports to gain insights into business performance and areas for improvement.
+    - View customer information and history.
+    - View sales data.
+    - View order history.
 
 ## Abstractions
 With the persona, problem, and use cases scoped out, my next steps are to translate them into features, components, and a mapped out user journey. By reducing the abstractions of the use cases to a granular level, I can have a specific and tangible reference for developing the data layer, frontend, and interactions of all the components of the CRM.
@@ -81,10 +82,10 @@ Each CUSTOMER would include:
 **1.c) Viewing and Retrieving Customer Data**
 When the user is creating a new order or viewing customer data, the system will return their information.
 **1.d) Updating Customer Information**
-If a change occurs, such as a company contact changes their number or moves to a new location, the user will update that information accordingly in the system.
+If a change occurs or the customer moves along the sales stages, the user will update that information accordingly in the system.
 
 
-## Use Case 2: Project Management
+### Use Case 2: Project Management
 **2.a) Creating and Assigning Tasks**
 After a new order has been created in the system, the user can create tasks for that order and assign it to specific individuals or departments.
 Each TASK will include:
@@ -95,9 +96,9 @@ Each TASK will include:
 - Priority (Low, Medium, High)
 - Deadline
 - Details - A section to type notes regarding that task
-**2.b) Viewing Tasks and Projects**
+**2.b) Viewing Tasks and Orders**
 Users can view all tasks and orders in the system and sort or filter them however they need to. 
-Users can sort or filter TASKS by:
+TASKS can be sorted or filtered by:
 - Status
 - Order
 - Assignee
@@ -106,4 +107,30 @@ Users can sort or filter TASKS by:
 ORDERS can be sorted or filtered by:
 - Company
 - Date
+- Delivery Date
+- Total Price
+- Status
+**2.c) Completing Tasks**
+Users can change the status of a TASK as they work on it.
+- Not Started
+- In Progress
+- Complete
+The changes in status of a TASK also contribute to the status of an ORDER. If all tasks are complete for a given ORDER, then that ORDERs status also changes.
 
+Additonally, users can also change the status of an ORDER directly.
+- Not Started
+- In Progress
+- Complete
+
+
+### Use Case 3: Reporting and Analytics
+**3.a) Viewing All Customer Information**
+Users will be able to view all their customers in one table.
+**3.b) Viewing Individual Customer Information**
+Users will also be able to view individual customers alongside all their orders.
+**3.c) Viewing Sales Data and Order History**
+Users can view their total revenue, receivable revenue, and the orders associated with them.
+
+## The Data Layer
+Now that the use cases are granularized, I have a much clearer idea of the data the system will be handling. I can now plan the schemas and API endpoints that will be the backbone of the CRM.
+### Customer Schema
