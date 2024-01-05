@@ -34,6 +34,7 @@ They're seeking a solution for these problem so that they can remain organized a
 The product will be used by HydroTech's management, customer service, and sales team for managing client relations, work flows, and tasks. 
 
 1. Customer Interaction and Data Entry
+
 Customer service representatives use the CRM to:
     - Process new orders and service requests.
     - Enter new customer information or retrieves existing customer profiles during interactions.
