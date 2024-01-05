@@ -48,6 +48,16 @@ The product will be used by HydroTech's management, customer service, and sales 
 ## Abstractions
 With the persona, problem, and use cases scoped out, my next steps are to translate them into features, components, and a mapped out user journey. By reducing the abstractions of the use cases, I can have a specific and tangible reference for development.
 
-### Customer Interaction and Data Entry
-**Process new orders and service requests**
+I'll assign an identifier for each use case and expand upon the users actions, the system behavior, and the components related to it.
+
+### Use Case 1: Customer Interaction and Data Entry
+**a) Process new orders and service requests**
+- When a customer calls for a new order, the user would create a new order in the system
+- Each order would include:
+ - Customer data
+ - Items ordered
+ - Quantity ordered
+ - Unit price
+ - Total price
+ - Delivery 
 
