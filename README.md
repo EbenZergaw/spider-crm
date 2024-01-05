@@ -166,7 +166,7 @@ Now that the use cases are granularized, I have a much clearer idea of the data 
 - details - String
 
 ### Order Schema
-`
+``
 - orderID - String
 - customerID - String
 - orderType - Enum {
@@ -182,7 +182,7 @@ Now that the use cases are granularized, I have a much clearer idea of the data 
 - tasks - Array of Tasks
 - Details - String
 - Delivery Date - String
-`
+``
 
 ### ProductsOrder Schema
 - **Extends Order**
