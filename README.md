@@ -27,11 +27,12 @@ HydroTech Imports Co. is an established company that imports and distributes wat
 The company's operations revolve around sourcing materials and products to meet the demands of the agriculture, manufacturing, and real estate industries. Additionally, HydroTech competes in tenders to win contracts for large scale projects in both the private and the public sector.
 
 The company employees roughly 100 people whose job functions range from engineering to sales and marketing. 
-As HydroTech's operations scale, they've been struggled to manage and keep track of their customers, contracts, and tenders. In addition to incoming deals, HydroTech also has to keep up with previous customer relationships for maintenance, processing orders, and installations.
+As HydroTech's operations scale, they've been struggled to manage and keep track of their customer data. In addition to incoming deals, HydroTech also has to keep up with previous customer relationships for processing orders and managing projects.
 They're seeking a solution for these problem so that they can remain organized and provide satisfactory service for their customers.
 
-## Use Cases
-The product will be used by HydroTech's management, customer service, and sales team for managing client relations, work flows, and tasks. 
+This solution will be a CRM with project management capabilities that will used by HydroTech's management, customer service, and sales team for managing client relations, work flows, and tasks. 
+
+The three main use cases are as follows:
 
 1. Customer Interaction and Data Entry
     - Process new orders and service requests.
@@ -46,7 +47,7 @@ The product will be used by HydroTech's management, customer service, and sales 
     - View sales data.
     - View order history.
 
-## Abstractions
+## Use Cases
 With the persona, problem, and use cases scoped out, my next steps are to translate them into features, components, and a mapped out user journey. By reducing the abstractions of the use cases to a granular level, I can have a specific and tangible reference for developing the data layer, frontend, and interactions of all the components of the CRM.
 
 I'll assign an identifier for each use case and expand upon the users actions, the system behavior, and the components related to it.
@@ -144,7 +145,7 @@ Users will also be able to view individual customers alongside all their orders.
 **3.c) Viewing Sales Data and Order History**
 Users can view their total revenue, receivable revenue, and the orders associated with them.
 
-## The Data Layer
+## Database Schemas
 Now that the use cases are granularized, I have a much clearer idea of the data the system will be handling. I can now plan the schemas and API endpoints that will be the backbone of the CRM.
 
 ### Customer Schema
@@ -216,3 +217,5 @@ Now that the use cases are granularized, I have a much clearer idea of the data 
 }
 - deadline - Date
 - details - String
+
+## API Endpoints
