@@ -237,4 +237,4 @@ Since the schemas are now defined, the next step in fleshing out the data layer 
 | 3.a         | Viewing All Customer Information           | CUSTOMER    | GET    | /customers       |
 | 3.b         | Viewing Sales Data and Order History       | ORDER       | GET    | /orders/sales    |
 
-Now I'll sort the endpoints by the resource they're accessing and map out the inputs, outputs, and logic.
+Now I'll sort the endpoints by resource and map out the inputs, outputs, logic
