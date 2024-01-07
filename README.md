@@ -36,7 +36,8 @@ The three main use cases are as follows:
 
 1. Customer Interaction and Data Entry
     - Process new orders and service requests.
-    - Enter new customer information or retrieves existing customer profiles during interactions.
+    - Enter new customer information.
+    - View existing customer information.
     - Update customer profiles with recent interactions, inquiries, or feedback.
 2. Project Management:
     - Create and assign tasks for current orders to relevant departments.
@@ -139,10 +140,7 @@ They will also be able to filter and sort their customers by:
 - Orders
 - Revenue Generated
 
-**3.b) Viewing Individual Customer Information**
-Users will also be able to view individual customers alongside all their orders.
-
-**3.c) Viewing Sales Data and Order History**
+**3.b) Viewing Sales Data and Order History**
 Users can view their total revenue, receivable revenue, and the orders associated with them.
 
 ## Database Schemas
@@ -184,7 +182,7 @@ Now that the use cases are granularized, I have a much clearer idea of the data 
 - Details - String
 - Delivery Date - String
 
-### ProductsOrder Schema
+### Products Order Schema
 - **Extends Order**
 - items - Json {
     {
@@ -197,9 +195,15 @@ Now that the use cases are granularized, I have a much clearer idea of the data 
 - totalPrice - Int
 - Date - Date
 
-### ServiceOrder Schema
+### Service Order Schema
 - **Extends Order**
-- TODO
+- serviceType: Enum {
+    INSTALLATION,
+    MAINTENANCE,
+    CONSULTATION,
+    CUSTOM_SERVICE
+}
+- serviceFee: Int
 
 ### Task Schema
 - taskID - String
@@ -219,17 +223,18 @@ Now that the use cases are granularized, I have a much clearer idea of the data 
 - details - String
 
 ## API Endpoints
-| Use Case ID | Description | Resource    | Endpoint    |
-| ----------- | ----------- | ----------- | ----------- |
-| Header      | Title       | x           | x           |
-| Paragraph   | Text        | x           | x           |
+Since the schemas are now defined, the next step in fleshing out the data layer is to plan out the logic of the use cases and design the API. Each use case has a direct impact on the data and will have an API endpoint to match it. 
 
-- [ ] Mercury
-- [x] Venus
-- [x] Earth (Orbit/Moon)
-- [x] Mars
-- [ ] Jupiter
-- [ ] Saturn
-- [ ] Uranus
-- [ ] Neptune
-- [ ] Comet Haley
+| Use Case ID | Description                                | Resources   | Method | Endpoint         |
+|-------------|--------------------------------------------|-------------|--------|------------------|
+| 1.a         | Creating New Orders and Service Requests   | ORDER, TASK | POST   | /orders          |
+| 1.b         | Entering New Customer Information          | CUSTOMER    | POST   | /customers       |
+| 1.c         | Viewing and Retrieving Customer Data       | CUSTOMER    | GET    | /customers/:id   |
+| 1.d         | Updating Customer Information              | CUSTOMER    | PUT    | /customers/:id   |
+| 2.a         | Creating and Assigning Tasks               | ORDER, TASK | POST   | /orders/:id/task |
+| 2.b         | Viewing Tasks and Orders                   | ORDER, TASK | GET    | /orders          |
+| 2.c         | Completing Tasks                           | TASK, ORDER | PUT    | /orders/:id/task |
+| 3.a         | Viewing All Customer Information           | CUSTOMER    | GET    | /customers       |
+| 3.b         | Viewing Sales Data and Order History       | ORDER       | GET    | /orders/sales    |
+
+Now I'll sort the endpoints by the resource they're accessing and map out the inputs, outputs, and logic.
