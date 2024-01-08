@@ -237,4 +237,15 @@ Since the schemas are now defined, the next step in fleshing out the data layer 
 | 3.a         | Viewing All Customer Information           | CUSTOMER    | GET    | /customers       |
 | 3.b         | Viewing Sales Data and Order History       | ORDER       | GET    | /orders/sales    |
 
-Now I'll sort the endpoints by resource and map out the inputs, outputs, logic
+Now I'll sort the endpoints by resource and map out the inputs, outputs, logic.
+| Use Case ID | Description                                | Resource | Method | Endpoint         | Input | Output | Logic |
+|-------------|--------------------------------------------|----------|--------|------------------|-------|--------|-------|
+| 1.b         | Entering New Customer Information          | CUSTOMER | POST   | /customers       |       |        |       |
+| 1.c         | Viewing and Retrieving Customer Data       | CUSTOMER | GET    | /customers/:id   |       |        |       |
+| 1.d         | Updating Customer Information              | CUSTOMER | PUT    | /customers/:id   |       |        |       |
+| 3.a         | Viewing All Customer Information           | CUSTOMER | GET    | /customers       |       |        |       |
+| 1.a         | Creating New Orders and Service Requests   | ORDER    | POST   | /orders          |       |        |       |
+| 2.b         | Viewing Tasks and Orders                   | ORDER    | GET    | /orders          |       |        |       |
+| 3.b         | Viewing Sales Data and Order History       | ORDER    | GET    | /orders/sales    |       |        |       |
+| 2.a         | Creating and Assigning Tasks               | TASK     | POST   | /orders/:id/task |       |        |       |
+| 2.c         | Completing Tasks                           | TASK     | PUT    | /orders/:id/task |       |        |       |
