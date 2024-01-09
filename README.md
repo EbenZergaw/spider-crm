@@ -81,10 +81,11 @@ Each CUSTOMER would include:
 - Orders
 - Date 
 - Location
+- Tags
 - Details - A section to type notes regarding the customer
 
-**1.c) Viewing and Retrieving Customer Data**
-When the user is creating a new order for a customer, searching for a customer, or viewing customer data, the system will return their information.
+**1.c)Viewing Singular Customer Information**
+Users will be able view individual customer information that will display their data including orders.
 
 **1.d) Updating Customer Information**
 If a change occurs or the customer moves along the sales stages, the user will update that information accordingly in the system.
@@ -138,6 +139,7 @@ They will also be able to filter and sort their customers by:
 - Stage
 - Date
 - Orders
+- Tags
 - Revenue Generated
 
 **3.b) Viewing Sales Data and Order History**
@@ -162,6 +164,7 @@ Now that the use cases are granularized, I have a much clearer idea of the data 
 }
 - orders - Array of Orders
 - date - Date 
+- tags - Array of Strings
 - location - String
 - details - String
 
@@ -223,13 +226,13 @@ Now that the use cases are granularized, I have a much clearer idea of the data 
 - details - String
 
 ## API Endpoints
-Since the schemas are now defined, the next step in fleshing out the data layer is to plan out the logic of the use cases and design the API. Each use case has a direct impact on the data and will have an API endpoint to match it. 
+Since the schemas are now defined, the next step in fleshing out the data layer is to plan out the logic of the use cases and design the API. Each use case has a direct impact on the data and will have an API endpoint to match it. The table below will help me to organize each use case into an endpoint.
 
 | Use Case ID | Description                                | Resources   | Method | Endpoint         |
 |-------------|--------------------------------------------|-------------|--------|------------------|
 | 1.a         | Creating New Orders and Service Requests   | ORDER, TASK | POST   | /orders          |
 | 1.b         | Entering New Customer Information          | CUSTOMER    | POST   | /customers       |
-| 1.c         | Viewing and Retrieving Customer Data       | CUSTOMER    | GET    | /customers/:id   |
+| 1.c         | Viewing Singular Customer Information      | CUSTOMER    | GET    | /customers/:id   |
 | 1.d         | Updating Customer Information              | CUSTOMER    | PUT    | /customers/:id   |
 | 2.a         | Creating and Assigning Tasks               | ORDER, TASK | POST   | /orders/:id/task |
 | 2.b         | Viewing Tasks and Orders                   | ORDER, TASK | GET    | /orders          |
@@ -237,15 +240,10 @@ Since the schemas are now defined, the next step in fleshing out the data layer 
 | 3.a         | Viewing All Customer Information           | CUSTOMER    | GET    | /customers       |
 | 3.b         | Viewing Sales Data and Order History       | ORDER       | GET    | /orders/sales    |
 
-Now I'll sort the endpoints by resource and map out the inputs, outputs, logic.
-| Use Case ID | Description                                | Resource | Method | Endpoint         | Input | Output | Logic |
-|-------------|--------------------------------------------|----------|--------|------------------|-------|--------|-------|
-| 1.b         | Entering New Customer Information          | CUSTOMER | POST   | /customers       |       |        |       |
-| 1.c         | Viewing and Retrieving Customer Data       | CUSTOMER | GET    | /customers/:id   |       |        |       |
-| 1.d         | Updating Customer Information              | CUSTOMER | PUT    | /customers/:id   |       |        |       |
-| 3.a         | Viewing All Customer Information           | CUSTOMER | GET    | /customers       |       |        |       |
-| 1.a         | Creating New Orders and Service Requests   | ORDER    | POST   | /orders          |       |        |       |
-| 2.b         | Viewing Tasks and Orders                   | ORDER    | GET    | /orders          |       |        |       |
-| 3.b         | Viewing Sales Data and Order History       | ORDER    | GET    | /orders/sales    |       |        |       |
-| 2.a         | Creating and Assigning Tasks               | TASK     | POST   | /orders/:id/task |       |        |       |
-| 2.c         | Completing Tasks                           | TASK     | PUT    | /orders/:id/task |       |        |       |
+
+I'll outline the inputs, logic, and outputs of each endpoint. Additionally, I'll also brainstorm UI components that will correspond with the endpoints. After this, I'll be ready to begin development.
+
+### 1.a Create a New Order
+**ENDPOINT: /orders**
+**METHOD: POST**
+**Input**
