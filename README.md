@@ -245,5 +245,7 @@ I'll outline the inputs, logic, and outputs of each endpoint. Additionally, I'll
 
 ### 1.a Create a New Order
 **ENDPOINT: /orders**
+
 **METHOD: POST**
+
 **Input**
