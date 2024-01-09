@@ -94,6 +94,7 @@ If a change occurs or the customer moves along the sales stages, the user will u
 ### Use Case 2: Project Management
 **2.a) Creating and Assigning Tasks**
 After a new order has been created in the system, the user can create tasks for that order and assign it to specific individuals or departments.
+
 Each TASK will include:
 - Task Name
 - Order
@@ -104,13 +105,16 @@ Each TASK will include:
 - Details - A section to type notes regarding that task
 
 **2.b) Viewing All Tasks and Orders**
+
 Users can view all tasks and orders in the system and sort or filter them however they need to. 
+
 TASKS can be sorted or filtered by:
 - Status
 - Order
 - Assignee
 - Priority
 - Deadline
+
 ORDERS can be sorted or filtered by:
 - Company
 - Date
@@ -120,16 +124,18 @@ ORDERS can be sorted or filtered by:
 - Status
 
 **2.c) View Singular Order**
+
 Users can also view an individual order and all the tasks associated with it.
 
-**2.d) Completing Tasks**
-Users can change the status of a TASK as they work on it.
+**2.d) Completing or Editing Tasks**
+
+Users can edit a task or change the status of it. Task statuses would be:
 - Not Started
 - In Progress
 - Complete
-The changes in status of a TASK also contribute to the status of an ORDER. If all tasks are complete for a given ORDER, then that ORDERs status also changes.
+The changes in status of a TASK also contribute to the status of an order. If all tasks are complete for a given order, then that orders status also changes.
 
-Additonally, users can also change the status of an ORDER directly.
+Additonally, users can also change the status of an order directly.
 - Not Started
 - In Progress
 - Complete
@@ -137,6 +143,7 @@ Additonally, users can also change the status of an ORDER directly.
 
 ### Use Case 3: Reporting and Analytics
 **3.a) Viewing All Customer Information**
+
 Users will be able to view all their customers in one table.
 They will also be able to filter and sort their customers by:
 - Stage
@@ -146,6 +153,7 @@ They will also be able to filter and sort their customers by:
 - Revenue Generated
 
 **3.b) Viewing Sales Data and Order History**
+
 Users can view their total revenue, receivable revenue, and the orders associated with them.
 
 ## Database Schemas
@@ -338,22 +346,59 @@ I'll outline the inputs, logic, and outputs of each endpoint. Additionally, I'll
 
 
 
-### 2.a Creating and Assigning Tasks
-**Endpoint: /orders/:id/tasks**
+### 2.b Viewing All Tasks and Orders
+**Endpoint: /orders**
 
-**Method: POST**
+**Method: GET**
 
 **Input:**
-- Task form data
+- None
+
+**Logic:**
+- The endpoint will fetch all Order IDs in the database
+- If the operation succeeds, the client will begin rerendering the order components on the page
+- If the operation fails, the endpoint returns the appropriate status code which displays an error message on the client.
+
+**UI Components**
+- Orders dashboard page
+- Order card component
+- Task card
+
+### 2.c View Individual Orders
+**Endpoint: /orders/:id**
+
+**Method: GET**
+
+**Input:**
 - Order ID
 
 **Logic:**
-- The endpoint will process the task form data and create a new Task in the database with the corresponding order ID
-- If the operation succeeds, the client will rerender the page
+- The endpoint will fetch the order by its ID in the database
+- If the operation succeeds, it will return the order data and the client will render it on the page
 - If the operation fails, the endpoint returns the appropriate status code which displays an error message on the client.
 
 **UI Components**
 - Order page
-- Task entry form
+- Order information component
+- Task card
+
+### 2.d Completing Tasks
+**Endpoint: /orders/:id**
+
+**Method: GET**
+
+**Input:**
+- Order ID
+
+**Logic:**
+- The endpoint will fetch the order by its ID in the database
+- If the operation succeeds, it will return the order data and the client will render it on the page
+- If the operation fails, the endpoint returns the appropriate status code which displays an error message on the client.
+
+**UI Components**
+- Order page
+- Order information component
+- Task card
+
 
 
