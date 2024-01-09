@@ -103,7 +103,7 @@ Each TASK will include:
 - Deadline
 - Details - A section to type notes regarding that task
 
-**2.b) Viewing Tasks and Orders**
+**2.b) Viewing All Tasks and Orders**
 Users can view all tasks and orders in the system and sort or filter them however they need to. 
 TASKS can be sorted or filtered by:
 - Status
@@ -119,7 +119,10 @@ ORDERS can be sorted or filtered by:
 - Total Price
 - Status
 
-**2.c) Completing Tasks**
+**2.c) View Singular Order**
+Users can also view an individual order and all the tasks associated with it.
+
+**2.d) Completing Tasks**
 Users can change the status of a TASK as they work on it.
 - Not Started
 - In Progress
@@ -162,7 +165,7 @@ Now that the use cases are granularized, I have a much clearer idea of the data 
     CLOSED_WON,
     CLOSED_LOST
 }
-- orders - Array of Orders
+- orders - Array of Orders orderID
 - date - Date 
 - tags - Array of Strings
 - location - String
@@ -234,9 +237,10 @@ Since the schemas are now defined, the next step in fleshing out the data layer 
 | 1.b         | Entering New Customer Information          | CUSTOMER    | POST   | /customers       |
 | 1.c         | Viewing Singular Customer Information      | CUSTOMER    | GET    | /customers/:id   |
 | 1.d         | Updating Customer Information              | CUSTOMER    | PUT    | /customers/:id   |
-| 2.a         | Creating and Assigning Tasks               | ORDER, TASK | POST   | /orders/:id/task |
-| 2.b         | Viewing Tasks and Orders                   | ORDER, TASK | GET    | /orders          |
-| 2.c         | Completing Tasks                           | TASK, ORDER | PUT    | /orders/:id/task |
+| 2.a         | Creating and Assigning Tasks               | ORDER, TASK | POST   | /orders/:id/tasks|
+| 2.b         | Viewing All Tasks and Orders               | ORDER, TASK | GET    | /orders          |
+| 2.c         | View Individual Orders                     | ORDER, TASK | GET    | /orders/:id      |
+| 2.d         | Completing Tasks                           | TASK, ORDER | PUT    | /orders/:id/tasks|
 | 3.a         | Viewing All Customer Information           | CUSTOMER    | GET    | /customers       |
 | 3.b         | Viewing Sales Data and Order History       | ORDER       | GET    | /orders/sales    |
 
@@ -248,4 +252,108 @@ I'll outline the inputs, logic, and outputs of each endpoint. Additionally, I'll
 
 **Method: POST**
 
-**Input**
+**Input:**
+- Order data
+- Task data in an array
+
+**Logic:**
+- The endpoint will process the order data and create a new Order in the database.
+- It will then return the order ID, loop through the task data array, and create a Task in the database for each item of the array.
+- If the operation succeeds, the endpoint returns the order ID which then prompts the client to redirect to the /orders/:id endpoint, which corresponds with the order ID.
+- If the operation fails, the endpoint returns the appropriate status code which displays an error message on the client.
+
+**UI Components**
+- Order data form 
+- Tasks form
+
+### 1.b Create a New Customer
+**Endpoint: /customers**
+
+**Method: POST**
+
+**Input:**
+- Customer data
+
+**Logic:**
+- The endpoint will process the customer data and create a new Customer in the database.
+- If the operation succeeds, the endpoint returns the customer ID which then prompts the client to redirect to the /customer/:id endpoint, which corresponds with the customer ID.
+- If the operation fails, the endpoint returns the appropriate status code which displays an error message on the client.
+
+**UI Components**
+- Customer data form 
+
+### 1.c View Singular Customer Information
+**Endpoint: /customers/:id**
+
+**Method: GET**
+
+**Input:**
+- Customer ID
+
+**Logic:**
+- The endpoint will find the customer in the database by the customer ID
+- If the operation succeeds, the endpoint will return the customer data to be rendered on the client
+- If the operation fails, the endpoint returns the appropriate status code which displays an error message on the client.
+
+**UI Components**
+- Customer page
+- Customer information card
+
+
+### 1.d Updating Customer Information
+**Endpoint: /customers/:id**
+
+**Method: PUT**
+
+**Input:**
+- Updated Customer data
+
+**Logic:**
+- The endpoint will find the customer in the database by the customer ID, then replace it with the updated customer data.
+- If the operation succeeds, the client will redirect to the /customer/:id endpoint, which corresponds with the customer ID.
+- If the operation fails, the endpoint returns the appropriate status code which displays an error message on the client.
+
+**UI Components**
+- Customer page
+- Customer data form
+
+
+### 2.a Creating and Assigning Tasks
+**Endpoint: /orders/:id/tasks**
+
+**Method: POST**
+
+**Input:**
+- Task form data
+- Order ID
+
+**Logic:**
+- The endpoint will process the task form data and create a new Task in the database with the corresponding order ID
+- If the operation succeeds, the client will rerender the page
+- If the operation fails, the endpoint returns the appropriate status code which displays an error message on the client.
+
+**UI Components**
+- Order page
+- Task entry form
+
+
+
+### 2.a Creating and Assigning Tasks
+**Endpoint: /orders/:id/tasks**
+
+**Method: POST**
+
+**Input:**
+- Task form data
+- Order ID
+
+**Logic:**
+- The endpoint will process the task form data and create a new Task in the database with the corresponding order ID
+- If the operation succeeds, the client will rerender the page
+- If the operation fails, the endpoint returns the appropriate status code which displays an error message on the client.
+
+**UI Components**
+- Order page
+- Task entry form
+
+
