@@ -244,8 +244,8 @@ Since the schemas are now defined, the next step in fleshing out the data layer 
 I'll outline the inputs, logic, and outputs of each endpoint. Additionally, I'll also brainstorm UI components that will correspond with the endpoints. After this, I'll be ready to begin development.
 
 ### 1.a Create a New Order
-**ENDPOINT: /orders**
+**Endpoint: /orders**
 
-**METHOD: POST**
+**Method: POST**
 
 **Input**
