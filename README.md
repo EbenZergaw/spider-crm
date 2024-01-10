@@ -238,7 +238,7 @@ Since the schemas are now defined, the next step in fleshing out the data layer 
 | 2.a         | Creating and Assigning Tasks               | ORDER, TASK | POST   | /orders/:id/tasks|
 | 2.b         | Viewing All Tasks and Orders               | ORDER, TASK | GET    | /orders          |
 | 2.c         | View Individual Orders                     | ORDER, TASK | GET    | /orders/:id      |
-| 2.d         | Completing Tasks                           | TASK, ORDER | PUT    | /orders/tasks/:id|
+| 2.d         | Completing Tasks                           | TASK, ORDER | PUT    | /tasks/:id|
 | 3.a         | Viewing All Customer Information           | CUSTOMER    | GET    | /customers       |
 | 3.b         | Viewing Sales Data and Order History       | ORDER       | GET    | /orders/sales    |
 
@@ -391,7 +391,7 @@ I'll outline the inputs, logic, and outputs of each endpoint. Additionally, I'll
 - Task card
 
 ### 2.d Completing or Editing Tasks
-**Endpoint: /orders/tasks/:id**
+**Endpoint: /tasks/:id**
 
 **Method: PUT**
 
@@ -444,9 +444,9 @@ I'll outline the inputs, logic, and outputs of each endpoint. Additionally, I'll
 - None
 
 **Logic:**
-- The endpoint will select the ids, items, status, and service fees of all orders from the database
+- The endpoint will select the IDs, items, status, and service fees of all orders from the database
 - It will loop through and calculate total revenue and receivable revenue
-- If the operation succeeds, it will return the ids, total revenue, and receivable revenue for the client to render
+- If the operation succeeds, it will return the IDs, total revenue, and receivable revenue for the client to render
 - If the operation fails, the endpoint returns the appropriate status code which displays an error message on the client.
 
 **Output:**
@@ -458,3 +458,19 @@ I'll outline the inputs, logic, and outputs of each endpoint. Additionally, I'll
 - Sales dashboard
 - Order information card
 
+## Pre-Development Checkpoint
+Now that I have my API and database schemas defined, I'm ready to begin development. However, there are certain considerations I've had throughout the course of planning the data layer up to this point. 
+
+Firstly, the way the endpoints are organized is by the use case and not the resource they're accessing. This added a slight load on my "mental RAM" in keeping track of the endpoints. The chronological order of the endpoints and use case IDs is confusing for that reason, and also because I didn't invest enough time in organizing the use cases from the users point of view.
+
+A step I skipped is planning the flow of the users actions as they use the application. Logically, the first step would be to create a customer in the CRM and that should be use case 1.a, instead of creating an order which depends on having a customer in the database. 
+
+I'll complete the user flow diagram next and reorganize the endpoints accordingly. This will also further help me in organizing the frontend too. 
+
+Another consideration I've had is the behavior of the endpoints when the client would be fetching customers and the orders associated with them (use case). One option would be to have the client and their orders bundled together in the response, but this would create a strain on the server and user experience, especially if there is a large quantity of orders. 
+
+The other option, and the one I'll be implementing, is to return just the customer data alongside the IDs of their orders, and have the client loop through and fetch each order. On the frontend, this will mean having an Order Information Card component that displays a skeleton as it fetches the data. 
+
+This would separate the concerns of the customer data and the order data to different components. However, this would mean there would be more requests for the server to handle. Instead of one request with all the data, there will be a request for each order. The server will have to process multiple requests with a smaller payload instead of a single massive request. The trade off here is quantity instead of size.
+
+The reason I'll be doing it this way is because I don't the user waiting a long time for the request. At least with the skeletons, the user will see each subsequent request being completed instead of waiting on a loading screen. For a customer with a handful of orders it won't make much of a difference, but if the customer has made hundreds of orders, then its necessary to have a separate request for each order. None of these problems are going to exist since the scope of this project doesn't cover deployment, but I think its good to keep scalability in mind when developing this.
