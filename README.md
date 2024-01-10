@@ -133,6 +133,7 @@ Users can edit a task or change the status of it. Task statuses would be:
 - Not Started
 - In Progress
 - Complete
+
 The changes in status of a TASK also contribute to the status of an order. If all tasks are complete for a given order, then that orders status also changes.
 
 Additonally, users can also change the status of an order directly.
@@ -183,8 +184,11 @@ Now that the use cases are granularized, I have a much clearer idea of the data 
 - orderID - String
 - customerID - Customer customerID
 - orderType - Enum {
-    SERVICE,
-    PRODUCTS
+    PRODUCT_PURCHASE
+    INSTALLATION,
+    MAINTENANCE,
+    CONSULTATION,
+    CUSTOM_SERVICE
 }
 - status - Enum {
     NOT_STARTED,
@@ -192,12 +196,6 @@ Now that the use cases are granularized, I have a much clearer idea of the data 
     COMPLETED,
     CANCELLED
 }
-- tasks - Array of Tasks
-- Details - String
-- Delivery Date - String
-
-### Products Order Schema
-- **Extends Order**
 - items - Json {
     {
         itemName: String,
@@ -206,18 +204,10 @@ Now that the use cases are granularized, I have a much clearer idea of the data 
     },
     ...
 }
-- totalPrice - Int
-- Date - Date
-
-### Service Order Schema
-- **Extends Order**
-- serviceType: Enum {
-    INSTALLATION,
-    MAINTENANCE,
-    CONSULTATION,
-    CUSTOM_SERVICE
-}
-- serviceFee: Int
+- serviceFee - Int
+- tasks - Array of Tasks
+- Details - String
+- Delivery Date - String
 
 ### Task Schema
 - taskID - String
@@ -248,7 +238,7 @@ Since the schemas are now defined, the next step in fleshing out the data layer 
 | 2.a         | Creating and Assigning Tasks               | ORDER, TASK | POST   | /orders/:id/tasks|
 | 2.b         | Viewing All Tasks and Orders               | ORDER, TASK | GET    | /orders          |
 | 2.c         | View Individual Orders                     | ORDER, TASK | GET    | /orders/:id      |
-| 2.d         | Completing Tasks                           | TASK, ORDER | PUT    | /orders/:id/tasks|
+| 2.d         | Completing Tasks                           | TASK, ORDER | PUT    | /orders/tasks/:id|
 | 3.a         | Viewing All Customer Information           | CUSTOMER    | GET    | /customers       |
 | 3.b         | Viewing Sales Data and Order History       | ORDER       | GET    | /orders/sales    |
 
@@ -287,6 +277,9 @@ I'll outline the inputs, logic, and outputs of each endpoint. Additionally, I'll
 - If the operation succeeds, the endpoint returns the customer ID which then prompts the client to redirect to the /customer/:id endpoint, which corresponds with the customer ID.
 - If the operation fails, the endpoint returns the appropriate status code which displays an error message on the client.
 
+**Output:**
+- Customer ID
+
 **UI Components**
 - Customer data form 
 
@@ -302,6 +295,9 @@ I'll outline the inputs, logic, and outputs of each endpoint. Additionally, I'll
 - The endpoint will find the customer in the database by the customer ID
 - If the operation succeeds, the endpoint will return the customer data to be rendered on the client
 - If the operation fails, the endpoint returns the appropriate status code which displays an error message on the client.
+
+**Output:**
+- Customer Data
 
 **UI Components**
 - Customer page
@@ -320,6 +316,9 @@ I'll outline the inputs, logic, and outputs of each endpoint. Additionally, I'll
 - The endpoint will find the customer in the database by the customer ID, then replace it with the updated customer data.
 - If the operation succeeds, the client will redirect to the /customer/:id endpoint, which corresponds with the customer ID.
 - If the operation fails, the endpoint returns the appropriate status code which displays an error message on the client.
+
+**Output:**
+- None
 
 **UI Components**
 - Customer page
@@ -340,6 +339,9 @@ I'll outline the inputs, logic, and outputs of each endpoint. Additionally, I'll
 - If the operation succeeds, the client will rerender the page
 - If the operation fails, the endpoint returns the appropriate status code which displays an error message on the client.
 
+**Output:**
+- None
+
 **UI Components**
 - Order page
 - Task entry form
@@ -356,8 +358,11 @@ I'll outline the inputs, logic, and outputs of each endpoint. Additionally, I'll
 
 **Logic:**
 - The endpoint will fetch all Order IDs in the database
-- If the operation succeeds, the client will begin rerendering the order components on the page
+- If the operation succeeds, the endpoint will return the Order IDs for the client to render
 - If the operation fails, the endpoint returns the appropriate status code which displays an error message on the client.
+
+**Output:**
+- Array of Order IDs
 
 **UI Components**
 - Orders dashboard page
@@ -377,28 +382,79 @@ I'll outline the inputs, logic, and outputs of each endpoint. Additionally, I'll
 - If the operation succeeds, it will return the order data and the client will render it on the page
 - If the operation fails, the endpoint returns the appropriate status code which displays an error message on the client.
 
+**Output:**
+- Order Data
+
 **UI Components**
 - Order page
-- Order information component
+- Order information card
 - Task card
 
-### 2.d Completing Tasks
-**Endpoint: /orders/:id**
+### 2.d Completing or Editing Tasks
+**Endpoint: /orders/tasks/:id**
+
+**Method: PUT**
+
+**Input:**
+- Task ID
+- Updated task data
+
+**Logic:**
+- The endpoint will fetch the task by its ID in the database and replace it with the updated data
+- If the operation succeeds, it will prompt the client to rerender the page
+- If the operation fails, the endpoint returns the appropriate status code which displays an error message on the client.
+
+**Output:**
+- None
+
+**UI Components**
+- Order page
+- Order information card
+- Task card
+- Task entry form
+
+
+### 3.a Viewing All Customer Information
+**Endpoint: /customers**
 
 **Method: GET**
 
 **Input:**
-- Order ID
+- None
 
 **Logic:**
-- The endpoint will fetch the order by its ID in the database
-- If the operation succeeds, it will return the order data and the client will render it on the page
+- The endpoint will fetch all customer IDs from the database
+- If the operation succeeds, it will return the customer IDs in an array for the client to render
 - If the operation fails, the endpoint returns the appropriate status code which displays an error message on the client.
 
+**Output:**
+- Array of Customer IDs
+
 **UI Components**
-- Order page
-- Order information component
-- Task card
+- Customers dashboard
+- Customer information card
 
 
+### 3.b Viewing Sales Data and Order History
+**Endpoint: /orders/sales**
+
+**Method: GET**
+
+**Input:**
+- None
+
+**Logic:**
+- The endpoint will select the ids, items, status, and service fees of all orders from the database
+- It will loop through and calculate total revenue and receivable revenue
+- If the operation succeeds, it will return the ids, total revenue, and receivable revenue for the client to render
+- If the operation fails, the endpoint returns the appropriate status code which displays an error message on the client.
+
+**Output:**
+- Order IDs
+- Total Revenue
+- Receivable Revenue
+
+**UI Components**
+- Sales dashboard
+- Order information card
 
