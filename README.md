@@ -467,7 +467,7 @@ A step I skipped is planning the flow of the users actions as they use the appli
 
 I'll complete the user flow diagram next and reorganize the endpoints accordingly. This will also further help me in organizing the frontend too since I'll have a better reference point for how the user will be interacting with the software.
 
-Another consideration I've had is the behavior of the endpoints when the client would be fetching customers and the orders associated with them (use case). One option would be to have the client and their orders bundled together in the response, but this would create a strain on the server and user experience, especially if there is a large quantity of orders. 
+Another consideration I've had is the behavior of the endpoints when the client would be fetching customers and the orders associated with them (use case 1.c). One option would be to have the client and their orders bundled together in the response, but this would create a strain on the server and user experience, especially if there is a large quantity of orders. 
 
 The other option, and the one I'll be implementing, is to return just the customer data alongside the IDs of their orders, and have the client loop through and fetch each order. On the frontend, this will mean having an Order Information Card component that displays a skeleton as it fetches the data. 
 
