@@ -474,3 +474,5 @@ The other option, and the one I'll be implementing, is to return just the custom
 This would separate the concerns of the customer data and the order data to different components. However, this would mean there would be more requests for the server to handle. Instead of one request with all the data, there will be a request for each order. The server will have to process multiple requests with a smaller payload instead of a single massive request. The trade off here is quantity instead of size.
 
 The reason I'll be doing it this way is because I don't the user waiting a long time for the request. At least with the skeletons, the user will see each subsequent request being completed instead of waiting on a loading screen. For a customer with a handful of orders it won't make much of a difference, but if the customer has made hundreds of orders, then its necessary to have a separate request for each order. None of these problems are going to exist since the scope of this project doesn't cover deployment, but I think its good to keep scalability in mind when developing this.
+
+## Project Management
