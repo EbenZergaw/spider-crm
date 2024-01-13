@@ -465,7 +465,7 @@ Firstly, the way the endpoints are organized is by the use case and not the reso
 
 A step I skipped is planning the flow of the users actions as they use the application. Logically, the first step would be to create a customer in the CRM and that should be use case 1.a, instead of creating an order which depends on having a customer in the database. 
 
-I'll complete the user flow diagram next and reorganize the endpoints accordingly. This will also further help me in organizing the frontend too since I'll have a better reference point for how the user will be interacting with the software.
+I'll complete the user flow diagram next and reorganize the endpoints accordingly. This will also further help me in organizing the frontend too since I'll have a better reference point for how the user will be interacting with the software chronologically.
 
 Another consideration I've had is the behavior of the endpoints when the client would be fetching customers and the orders associated with them (use case 1.c). One option would be to have the client and their orders bundled together in the response, but this would create a strain on the server and user experience, especially if there is a large quantity of orders. 
 
@@ -476,6 +476,7 @@ This would separate the concerns of the customer data and the order data to diff
 The reason I'll be doing it this way is because I don't the user waiting a long time for the request. At least with the skeletons, the user will see each subsequent request being completed instead of waiting on a loading screen. For a customer with a handful of orders it won't make much of a difference, but if the customer has made hundreds of orders, then its necessary to have a separate request for each order. None of these problems are going to exist since the scope of this project doesn't cover deployment, but I think its good to keep scalability in mind when developing this.
 
 ## User Flow Diagram
+Customer service would create a new customer in the system and fill out the order information. Management would see the order and add tasks to be completed. Over the course of the next few weeks or months, the customer service, sales, and engineering departments will complete those tasks and log them in the system.
 
 ## Tech Stack
 
