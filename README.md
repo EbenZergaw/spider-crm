@@ -482,9 +482,17 @@ Customer service would create a new customer in the system and fill out the orde
 Learning new technologies and refining my skills for the ones I use are some of the biggest motivators I had for this project. The pace of advancement of technology, and specifically the JavaScript ecosystem, is a driving factor for learning and growth. The following are the frameworks, libraries, and tools that I will be using for this project.
 
 ### NextJS
-My journey in web development began with HTML, CSS, and vanilla JavaScript.
+My journey in web development began with HTML, CSS, and vanilla JavaScript. I then progressed to React and built a handful of projects with it. I love React for a variety of reasons, but its far from perfect. One of my biggest pain points with React was its entire ecosystem of third-party libraries and tooling. React in itself is incomplete. It's biggest weakness being its lack of server side rendering. 
 
-- Express
+What I love about NextJS is that it extends a lot of the features of React alongside fixing some of its biggest problems. After having gotten over the initial learning curve of Next, I became infatuated with it (and Vercel as a whole). It is everything ReactJS should have been. 
+
+### Express
+Though NextJS does offer API routing built into it, I'll be choosing to use Express instead for two reasons. Firstly, I don't like the file conventions for API routes. It's great for pages, but I don't want to have all my routes segmented on their own in an awkward hierarchy of folders. Express provides an excellent developer experience when building APIs. All the routes are in one file that acts as the server, its simple and intuitive. 
+
+Another reason why I'm choosing Express is because I want a microservice architecture for this project and the ones I'm going to extend from it. By decoupling the API from the frontend, I can build other enterprise facing products that can easily integrate with this CRM. If I build an inventory management system for example, it can stand as its own product. But if the user wants to integrate it with this CRM, an API-first microservice approach can make that much simpler.
+
+
+
 - Prisma
 - Postgres
 - React Query
