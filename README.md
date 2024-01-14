@@ -467,7 +467,7 @@ A step I skipped is planning the flow of the users actions as they use the appli
 
 I'll complete the user flow diagram next and reorganize the endpoints accordingly. This will also further help me in organizing the frontend too since I'll have a better reference point for how the user will be interacting with the software chronologically.
 
-Another consideration I've had is the behavior of the endpoints when the client would be fetching customers and the orders associated with them (use case 1.c). One option would be to have the client and their orders bundled together in the response, but this would create a strain on the server and user experience, especially if there is a large quantity of orders. 
+Another consideration I've had is the behavior of the endpoints when the client would be fetching customers and the orders associated with them (use case 1.c). One option would be to have the client and their orders bundled together in the response, but this could negatively impact the user experience, especially if there is a large quantity of orders.
 
 The other option, and the one I'll be implementing, is to return just the customer data alongside the IDs of their orders, and have the client loop through and fetch each order. On the frontend, this will mean having an Order Information Card component that displays a skeleton as it fetches the data. 
 
@@ -479,7 +479,11 @@ The reason I'll be doing it this way is because I don't the user waiting a long 
 Customer service would create a new customer in the system and fill out the order information. Management would see the order and add tasks to be completed. Over the course of the next few weeks, the customer service, sales, and engineering departments will complete those tasks and log them in the system. Management will progressively check up on the progress of orders, sales, and customer interactions.
 
 ## Tech Stack
-- NextJS
+Learning new technologies and refining my skills for the ones I use are some of the biggest motivators I had for this project. The pace of advancement of technology, and specifically the JavaScript ecosystem, is a driving factor for learning and growth. The following are the frameworks, libraries, and tools that I will be using for this project.
+
+### NextJS
+My journey in web development began with HTML, CSS, and vanilla JavaScript.
+
 - Express
 - Prisma
 - Postgres
