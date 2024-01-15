@@ -502,8 +502,7 @@ Tailwind is excellent due to its unopinionated CSS. Its a utility system, not a 
 
 DaisyUI is one of these libraries, and a well used tool in my arsenal for most of my projects. DaisyUI is great because it looks great, its class based styling is semantic and intuitive, and its themes are phenomenal. DaisyUI is great but it has its flaws. My biggest complaint is the lack of functionality in some of its components, specifically modals, collapses, and dropdowns. They don't always work as they should, and this has led me to resorting to implementing states and event handlers, which is too much code for one simple element. I've also noticed that I've had to override DaisyUIs styling by writing custom CSS in almost all my projects.
 
-These issues are why I want to experiment with ShadCn. Unlike DaisyUI, where you simply apply a class to an element to style it, ShadCn requires you to install each component via the command line. This was definitely a turnoff when I first tried it out, but it does allow for better customization as each component's file can be edited as needed. Additionally, ShadCn also has a wider array of components. 
-
+These issues are why I want to experiment with ShadCn. Unlike DaisyUI, where you simply apply a class to an element to style it, ShadCn requires you to install each component via the command line. This was definitely a turnoff when I first tried it out, but it does allow for better customization as each component's file can be edited as needed. Additionally, ShadCn also has a wider array of components that also fit the requirements for this project. DaisyUI is great for landing pages and consumer facing web UIs whereas ShadCn excels at organizing complex information into manageable components. 
 ### State Management
 
 
