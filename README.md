@@ -486,15 +486,6 @@ My journey in web development began with HTML, CSS, and vanilla JavaScript. I th
 
 What I love about NextJS is that it extends a lot of the features of React alongside fixing some of its biggest problems. After having gotten over the initial learning curve of Next, I became infatuated with it (and Vercel as a whole). It is everything ReactJS should have been. 
 
-### Server Framework: Express
-Though NextJS does offer API routing built into it, I'll be choosing to use Express instead for two reasons. Firstly, I don't like the file conventions for API routes. It's great for pages, but I don't want to have all my routes segmented on their own in an awkward hierarchy of folders. Express provides an excellent developer experience when building APIs. All the routes are in one file that acts as the server, its simple and intuitive. 
-
-Another reason why I'm choosing Express is because I want a microservice architecture for this project and the ones I'm going to extend from it. By decoupling the API from the frontend, I can build other enterprise facing products that can easily integrate with this CRM. If I build an inventory management system for example, it can stand as its own product. But if the user wants to integrate it with this CRM, an API-first microservice approach can make that much simpler. Microservices would allow for better modularity. In the context of this CRM and adjacent products, they can be integrated together into a lightweight ERP.
-
-- Prisma
-- Postgres
-- React Query
-
 ### UI Libaries: ShadCn and Tailwind
 When I first started web development with plain CSS, layouts, mobile responsiveness, and conditional styling were a pain to work with. UI libraries fix these problems by providing a pre-defined system of CSS styles. Instead of manually styling your components, you can simply add a class name. I've worked with a small handful of these libaries including SkeletonCSS, Bootstrap, Tailwind, and DaisyUI. The latter two are by far my favorite.
 
@@ -502,7 +493,18 @@ Tailwind is excellent due to its unopinionated CSS. Its a utility system, not a 
 
 DaisyUI is one of these libraries, and a well used tool in my arsenal for most of my projects. DaisyUI is great because it looks great, its class based styling is semantic and intuitive, and its themes are phenomenal. DaisyUI is great but it has its flaws. My biggest complaint is the lack of functionality in some of its components, specifically modals, collapses, and dropdowns. They don't always work as they should, and this has led me to resorting to implementing states and event handlers, which is too much code for one simple element. I've also noticed that I've had to override DaisyUIs styling by writing custom CSS in almost all my projects.
 
-These issues are why I want to experiment with ShadCn. Unlike DaisyUI, where you simply apply a class to an element to style it, ShadCn requires you to install each component via the command line. This was definitely a turnoff when I first tried it out, but it does allow for better customization as each component's file can be edited as needed. Additionally, ShadCn also has a wider array of components that also fit the requirements for this project. DaisyUI is great for landing pages and consumer facing web UIs whereas ShadCn excels at organizing complex information into manageable components. 
+These issues are why I want to experiment with ShadCn. Unlike DaisyUI, where you simply apply a class to an element to style it, ShadCn requires you to install each component via the command line. This was definitely a turnoff when I first tried it out, but it does allow for better customization as each component's file can be edited as needed. Additionally, ShadCn also has a wider array of components that also fit the requirements for this project. DaisyUI is great for landing pages and consumer facing web UIs whereas ShadCn excels at organizing complex information into manageable components.
+
+### Server Framework: Express
+Though NextJS does offer API routing built into it, I'll be choosing to use Express instead for two reasons. Firstly, I don't like the file conventions for API routes. It's great for pages, but I don't want to have all my routes segmented on their own in an awkward hierarchy of folders. Express provides an excellent developer experience when building APIs. All the routes are in one file that acts as the server, its simple and intuitive. 
+
+Another reason why I'm choosing Express is because I want a microservice architecture for this project and the ones I'm going to extend from it. By decoupling the API from the frontend, I can build other enterprise facing products that can easily integrate with this CRM. If I build an inventory management system for example, it can stand as its own product. But if the user wants to integrate it with this CRM, an API-first microservice approach can make that much simpler. Microservices would allow for better modularity. In the context of this CRM and adjacent products, they can be integrated together into a lightweight ERP.
+
+## ORM and Database: Prisma and Postgres
+I've used Prisma for my previous project and had a great experience using it. The syntax and querying is simple and intuitive and I greatly enjoyed it. For this project, I'll be using Prisma on top of Postgres. Choosing which databases to learn and get proficient at has always been on my mind but I've had my eye on Postgres for a handful of a reasons. Firstly, it has been widely used for decades which shows it is reliable. Secondly, a relational database fits this project because of the highly structured data of customers, orders, and tasks.
+
+- React Query
+
 ### State Management
 
 
