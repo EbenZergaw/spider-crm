@@ -506,8 +506,6 @@ Another reason why I'm choosing Express is because I want a microservice archite
 ## ORM and Database: Prisma and Postgres
 I've used Prisma for my previous project and had a great experience using it. The syntax and querying is simple and intuitive and I greatly enjoyed it. For this project, I'll be using Prisma on top of Postgres. Choosing which databases to learn and get proficient at has always been on my mind but I've had my eye on Postgres for a handful of a reasons. Firstly, it has been widely used for decades which shows it is reliable. Secondly, a relational database fits this project because of the highly structured data of customers, orders, and tasks.
 
-- React Query
-
 ### State Management
 
 
