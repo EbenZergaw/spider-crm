@@ -482,13 +482,11 @@ Customer service would create a new customer in the system and fill out the orde
 Learning new technologies and refining my skills for the ones I use are some of the biggest motivators I had for this project. The pace of advancement of technology, and specifically the JavaScript ecosystem, is a driving factor for learning and growth. The following are the frameworks, libraries, and tools that I will be using for this project.
 
 ### Frontend Framewok: NextJS
-![Next JS](./readme_assets/next.png)
 My journey in web development began with HTML, CSS, and vanilla JavaScript. I then progressed to React and built a handful of projects with it. I love React for a variety of reasons, but its far from perfect. One of my biggest pain points with React was its entire ecosystem of third-party libraries and tooling. React in itself is incomplete. It's biggest weakness being its lack of server side rendering. 
 
 What I love about NextJS is that it extends a lot of the features of React alongside fixing some of its biggest problems. After having gotten over the initial learning curve of Next, I became infatuated with it (and Vercel as a whole). It is everything ReactJS should have been. 
 
 ### UI Libaries: ShadCn and Tailwind
-![Shadcn and tailwind](./readme_assets/shadcn-tailwind.png)
 When I first started web development with plain CSS, layouts, mobile responsiveness, and conditional styling were a pain to work with. UI libraries fix these problems by providing a pre-defined system of CSS styles. Instead of manually styling your components, you can simply add a class name. I've worked with a small handful of these libaries including SkeletonCSS, Bootstrap, Tailwind, and DaisyUI. The latter two are by far my favorite.
 
 Tailwind is excellent due to its unopinionated CSS. Its a utility system, not a visual design system. Tailwind allows you to control an element's size, positioning, and behavior on the DOM without enforcing its own aesthetic. Tailwind essentially abstracts the hard and annoying parts of CSS without getting in the way of how you want your app to look. This has made Tailwind a foundation for other UI libaries that provide the style you're looking for.
@@ -498,17 +496,14 @@ DaisyUI is one of these libraries, and a well used tool in my arsenal for most o
 These issues are why I want to experiment with ShadCn. Unlike DaisyUI, where you simply apply a class to an element to style it, ShadCn requires you to install each component via the command line. This was definitely a turnoff when I first tried it out, but it does allow for better customization as each component's file can be edited as needed. Additionally, ShadCn also has a wider array of components that also fit the requirements for this project. DaisyUI is great for landing pages and consumer facing web UIs whereas ShadCn excels at organizing complex information into manageable components.
 
 ### Data Fetching and Caching: React Query
-![React Query](./readme_assets/react-query.png)
 React Query is a library I'm really excited to learn due to how it simplifies data fetching. Normally for react applications, the fetch API or axios library is used with a useEffect hook and useState variables on top of a global state manager for fetching and storing data. This results in lots of lines of code for simple HTTP requests, and it doesn't even cover caching. React Query provides an excellent developer experience for managing external data by abstracting all these functionalities into an easy to use to library.
 
 ### Server Framework: Express
-![Express](./readme_assets/express.png)
 Though NextJS does offer API routing built into it, I'll be choosing to use Express instead for two reasons. Firstly, I don't like the file conventions for API routes. It's great for pages, but I don't want to have all my routes segmented on their own in an awkward hierarchy of folders. Express provides an excellent developer experience when building APIs. All the routes are in one file that acts as the server, its simple and intuitive. 
 
 Another reason why I'm choosing Express is because I want a microservice architecture for this project and the ones I'm going to extend from it. By decoupling the API from the frontend, I can build other enterprise facing products that can easily integrate with this CRM. If I build an inventory management system for example, it can stand as its own product. But if the user wants to integrate it with this CRM, an API-first microservice approach can make that much simpler. Microservices would allow for better modularity. In the context of this CRM and adjacent products, they can be integrated together into a lightweight ERP.
 
 ## ORM and Database: Prisma and Postgres
-![Prisma and Postgres](./readme_assets/prisma-postgres.png)
 I've used Prisma for my previous project and had a great experience using it. The syntax and querying is simple and intuitive and I greatly enjoyed it. For this project, I'll be using Prisma on top of Postgres. Choosing which databases to learn and get proficient at has always been on my mind but I've had my eye on Postgres for a handful of a reasons. Firstly, it has been widely used for decades which shows it is reliable. Secondly, a relational database fits this project because of the highly structured data of customers, orders, and tasks.
 
 ### State Management
