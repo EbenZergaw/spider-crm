@@ -488,6 +488,7 @@ My journey in web development began with HTML, CSS, and vanilla JavaScript. I th
 What I love about NextJS is that it extends a lot of the features of React alongside fixing some of its biggest problems. After having gotten over the initial learning curve of Next, I became infatuated with it (and Vercel as a whole). It is everything ReactJS should have been. 
 
 ### UI Libaries: ShadCn and Tailwind
+![Shadcn and tailwind](./readme_assets/shadcn-tailwind.png)
 When I first started web development with plain CSS, layouts, mobile responsiveness, and conditional styling were a pain to work with. UI libraries fix these problems by providing a pre-defined system of CSS styles. Instead of manually styling your components, you can simply add a class name. I've worked with a small handful of these libaries including SkeletonCSS, Bootstrap, Tailwind, and DaisyUI. The latter two are by far my favorite.
 
 Tailwind is excellent due to its unopinionated CSS. Its a utility system, not a visual design system. Tailwind allows you to control an element's size, positioning, and behavior on the DOM without enforcing its own aesthetic. Tailwind essentially abstracts the hard and annoying parts of CSS without getting in the way of how you want your app to look. This has made Tailwind a foundation for other UI libaries that provide the style you're looking for.
