@@ -482,7 +482,7 @@ Customer service would create a new customer in the system and fill out the orde
 Learning new technologies and refining my skills for the ones I use are some of the biggest motivators I had for this project. The pace of advancement of technology, and specifically the JavaScript ecosystem, is a driving factor for learning and growth. The following are the frameworks, libraries, and tools that I will be using for this project.
 
 ### Frontend Framewok: NextJS
-![Next JS](https://static-00.iconduck.com/assets.00/nextjs-icon-2048x1234-pqycciiu.png)
+![Next JS](./readme_assets/next.png)
 My journey in web development began with HTML, CSS, and vanilla JavaScript. I then progressed to React and built a handful of projects with it. I love React for a variety of reasons, but its far from perfect. One of my biggest pain points with React was its entire ecosystem of third-party libraries and tooling. React in itself is incomplete. It's biggest weakness being its lack of server side rendering. 
 
 What I love about NextJS is that it extends a lot of the features of React alongside fixing some of its biggest problems. After having gotten over the initial learning curve of Next, I became infatuated with it (and Vercel as a whole). It is everything ReactJS should have been. 
