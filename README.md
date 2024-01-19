@@ -502,11 +502,13 @@ These issues are why I want to experiment with ShadCn. Unlike DaisyUI, where you
 React Query is a library I'm really excited to learn due to how it simplifies data fetching. Normally for react applications, the fetch API or axios library is used with a useEffect hook and useState variables on top of a global state manager for fetching and storing data. This results in lots of lines of code for simple HTTP requests, and it doesn't even cover caching. React Query provides an excellent developer experience for managing external data by abstracting all these functionalities into an easy to use to library.
 
 ### Server Framework: Express
+![Express](./readme_assets/express.png)
 Though NextJS does offer API routing built into it, I'll be choosing to use Express instead for two reasons. Firstly, I don't like the file conventions for API routes. It's great for pages, but I don't want to have all my routes segmented on their own in an awkward hierarchy of folders. Express provides an excellent developer experience when building APIs. All the routes are in one file that acts as the server, its simple and intuitive. 
 
 Another reason why I'm choosing Express is because I want a microservice architecture for this project and the ones I'm going to extend from it. By decoupling the API from the frontend, I can build other enterprise facing products that can easily integrate with this CRM. If I build an inventory management system for example, it can stand as its own product. But if the user wants to integrate it with this CRM, an API-first microservice approach can make that much simpler. Microservices would allow for better modularity. In the context of this CRM and adjacent products, they can be integrated together into a lightweight ERP.
 
 ## ORM and Database: Prisma and Postgres
+![Prisma and Postgres](./readme_assets/prisma-postgres.png)
 I've used Prisma for my previous project and had a great experience using it. The syntax and querying is simple and intuitive and I greatly enjoyed it. For this project, I'll be using Prisma on top of Postgres. Choosing which databases to learn and get proficient at has always been on my mind but I've had my eye on Postgres for a handful of a reasons. Firstly, it has been widely used for decades which shows it is reliable. Secondly, a relational database fits this project because of the highly structured data of customers, orders, and tasks.
 
 ### State Management
