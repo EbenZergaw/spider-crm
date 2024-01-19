@@ -498,6 +498,7 @@ DaisyUI is one of these libraries, and a well used tool in my arsenal for most o
 These issues are why I want to experiment with ShadCn. Unlike DaisyUI, where you simply apply a class to an element to style it, ShadCn requires you to install each component via the command line. This was definitely a turnoff when I first tried it out, but it does allow for better customization as each component's file can be edited as needed. Additionally, ShadCn also has a wider array of components that also fit the requirements for this project. DaisyUI is great for landing pages and consumer facing web UIs whereas ShadCn excels at organizing complex information into manageable components.
 
 ### Data Fetching and Caching: React Query
+![React Query](./readme_assets/react-query.png)
 React Query is a library I'm really excited to learn due to how it simplifies data fetching. Normally for react applications, the fetch API or axios library is used with a useEffect hook and useState variables on top of a global state manager for fetching and storing data. This results in lots of lines of code for simple HTTP requests, and it doesn't even cover caching. React Query provides an excellent developer experience for managing external data by abstracting all these functionalities into an easy to use to library.
 
 ### Server Framework: Express
