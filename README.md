@@ -503,10 +503,7 @@ Though NextJS does offer API routing built into it, I'll be choosing to use Expr
 
 Another reason why I'm choosing Express is because I want a microservice architecture for this project and the ones I'm going to extend from it. By decoupling the API from the frontend, I can build other enterprise facing products that can easily integrate with this CRM. If I build an inventory management system for example, it can stand as its own product. But if the user wants to integrate it with this CRM, an API-first microservice approach can make that much simpler. Microservices would allow for better modularity. In the context of this CRM and adjacent products, they can be integrated together into a lightweight ERP.
 
-## ORM and Database: Prisma and Postgres
+### ORM and Database: Prisma and Postgres
 I've used Prisma for my previous project and had a great experience using it. The syntax and querying is simple and intuitive and I greatly enjoyed it. For this project, I'll be using Prisma on top of Postgres. Choosing which databases to learn and get proficient at has always been on my mind but I've had my eye on Postgres for a handful of a reasons. Firstly, it has been widely used for decades which shows it is reliable. Secondly, a relational database fits this project because of the highly structured data of customers, orders, and tasks.
-
-### State Management
-
 
 ## Project Management
