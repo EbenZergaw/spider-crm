@@ -211,8 +211,8 @@ Now that the use cases are granularized, I have a much clearer idea of the data 
 }
 - serviceFee - Int
 - tasks - Array of Tasks
-- Details - String
-- Delivery Date - String
+- details - String
+- delivery Date - String
 
 ### Task Schema
 - taskID - String
@@ -481,7 +481,7 @@ This would separate the concerns of the customer data and the order data to diff
 The reason I'll be doing it this way is because I don't the user waiting a long time for the request. At least with the skeletons, the user will see each subsequent request being completed instead of waiting on a loading screen. For a customer with a handful of orders it won't make much of a difference, but if the customer has made hundreds of orders, then its necessary to have a separate request for each order. None of these problems are going to exist since the scope of this project doesn't cover deployment, but I think its good to keep scalability in mind when developing this.
 
 ## User Flow Diagram
-Customer service would create a new customer in the system and fill out the order information. Management would see the order and add tasks to be completed. Over the course of the next few weeks, the customer service, sales, and engineering departments will complete those tasks and log them in the system. Management will progressively check up on the progress of orders, sales, and customer interactions.
+---
 
 ## Tech Stack
 Learning new technologies and refining my skills for the ones I use are some of the biggest motivators I had for this project. The pace of advancement of technology, and specifically the JavaScript ecosystem, is a driving factor for learning and growth. The following are the frameworks, libraries, and tools that I will be using for this project.
