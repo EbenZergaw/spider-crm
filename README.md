@@ -55,6 +55,7 @@ I'll assign an identifier for each use case and expand upon the users actions, t
 The users in these cases are the sales, customer service, and management team of HydroTech, with the customers being their clients.
 
 ### Use Case 1: Customer Interaction and Data Entry
+
 **1.a) Creating New Orders and Service Requests**
 When a customer calls for a new order, whether its for purchasing new products or for a service request, the user would create a new order in the system. 
 Each ORDER would include:
@@ -71,6 +72,7 @@ Each ORDER would include:
  - Delivery Date
 
 **1.b) Entering New Customer Information**
+
 When a new customer interacts with the company, the user will enter the customers data into the system.
 Each CUSTOMER would include:
 - Company Name
@@ -85,14 +87,17 @@ Each CUSTOMER would include:
 - Details - A section to type notes regarding the customer
 
 **1.c)Viewing Singular Customer Information**
+
 Users will be able view individual customer information that will display their data including orders.
 
 **1.d) Updating Customer Information**
+
 If a change occurs or the customer moves along the sales stages, the user will update that information accordingly in the system.
 
 
 ### Use Case 2: Project Management
 **2.a) Creating and Assigning Tasks**
+
 After a new order has been created in the system, the user can create tasks for that order and assign it to specific individuals or departments.
 
 Each TASK will include:
