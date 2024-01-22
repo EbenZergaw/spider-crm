@@ -482,6 +482,8 @@ The reason I'll be doing it this way is because I don't the user waiting a long 
 
 ## User Flow Diagram
 ![](readme_assets/use-case-1-user-flow.jpg)
+![](readme_assets/use-case-2-user-flow.jpg)
+![](readme_assets/use-case-3-user-flow.jpg)
 
 ## Tech Stack
 Learning new technologies and refining my skills for the ones I use are some of the biggest motivators I had for this project. The pace of advancement of technology, and specifically the JavaScript ecosystem, is a driving factor for learning and growth. The following are the frameworks, libraries, and tools that I will be using for this project.
