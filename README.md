@@ -470,7 +470,7 @@ Firstly, the way the endpoints are organized is by the use case and not the reso
 
 A step I skipped is planning the flow of the users actions as they use the application. Logically, the first step would be to create a customer in the CRM and that should be use case 1.a, instead of creating an order which depends on having a customer in the database. 
 
-I'll complete the user flow diagram next and reorganize the endpoints accordingly. This will also further help me in organizing the frontend too since I'll have a better reference point for how the user will be interacting with the software chronologically.
+I'll complete the user flow diagram next. This will also further help me in organizing the frontend too since I'll have a better reference point for how the user will be interacting with the software chronologically.
 
 Another consideration I've had is the behavior of the endpoints when the client would be fetching customers and the orders associated with them (use case 1.c). One option would be to have the client and their orders bundled together in the response, but this could negatively impact the user experience, especially if there is a large quantity of orders.
 
