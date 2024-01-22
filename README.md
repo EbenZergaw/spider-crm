@@ -480,7 +480,7 @@ This would separate the concerns of the customer data and the order data to diff
 
 The reason I'll be doing it this way is because I don't the user waiting a long time for the request. At least with the skeletons, the user will see each subsequent request being completed instead of waiting on a loading screen. For a customer with a handful of orders it won't make much of a difference, but if the customer has made hundreds of orders, then its necessary to have a separate request for each order. None of these problems are going to exist since the scope of this project doesn't cover deployment, but I think its good to keep scalability in mind when developing this.
 
-## User Flow Diagram
+## User Flow Diagrams
 ![](readme_assets/use-case-1-user-flow.jpg)
 ![](readme_assets/use-case-2-user-flow.jpg)
 ![](readme_assets/use-case-3-user-flow.jpg)
@@ -514,3 +514,4 @@ Another reason why I'm choosing Express is because I want a microservice archite
 I've used Prisma for my previous project and had a great experience using it. The syntax and querying is simple and intuitive and I greatly enjoyed it. For this project, I'll be using Prisma on top of Postgres. Choosing which databases to learn and get proficient at has always been on my mind but I've had my eye on Postgres for a handful of a reasons. Firstly, it has been widely used for decades which shows it is reliable. Secondly, a relational database fits this project because of the highly structured data of customers, orders, and tasks.
 
 ## Project Management
+I've come to notice with my previous experiences that project management is just as important as design and technical aspects. Being able to organize all my tasks and thoughts in one centralized place is a necessary overhead for creating progress. For this project, I'll manage everything within this document and add tasks I move forward. Now that I have a solid reference for 
