@@ -517,5 +517,5 @@ I've used Prisma for my previous project and had a great experience using it. Th
 I've come to notice with my previous experiences that project management is just as important as design and technical aspects. Being able to organize all my tasks and thoughts in one centralized place is a necessary overhead for creating progress. For this project, I'll manage everything within this document and add tasks I move forward. Now that I have a solid reference for my entire backend, I'll begin development.
 
 ### Build API
-- [] Install express and Prisma, set up connection with Supabase
-- []
+- [ ] Install express and Prisma, set up connection with Supabase
+- [ ]
