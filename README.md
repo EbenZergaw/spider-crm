@@ -528,3 +528,4 @@ I've come to notice with my previous experiences that project management is just
 - [ ] Develop PUT /tasks/:id endpoint. (USE CASE 2.d)
 - [ ] Develop GET /customers endpoint. (USE CASE 3.a)
 - [ ] Develop GET /orders/sales endpoint. (USE CASE 3.b)
+- [ ] Test APIs using Postman and make necessary changes
