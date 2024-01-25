@@ -243,7 +243,7 @@ Since the schemas are now defined, the next step in fleshing out the data layer 
 | 2.a         | Creating and Assigning Tasks               | ORDER, TASK | POST   | /orders/:id/tasks|
 | 2.b         | Viewing All Tasks and Orders               | ORDER, TASK | GET    | /orders          |
 | 2.c         | View Individual Orders                     | ORDER, TASK | GET    | /orders/:id      |
-| 2.d         | Completing Tasks                           | TASK, ORDER | PUT    | /tasks/:id|
+| 2.d         | Completing Tasks                           | TASK, ORDER | PUT    | /tasks/:id       |
 | 3.a         | Viewing All Customer Information           | CUSTOMER    | GET    | /customers       |
 | 3.b         | Viewing Sales Data and Order History       | ORDER       | GET    | /orders/sales    |
 
@@ -518,4 +518,13 @@ I've come to notice with my previous experiences that project management is just
 
 ### Build API
 - [ ] Install express and Prisma, set up connection with Supabase
-- [ ]
+- [ ] Develop POST /orders endpoint. (USE CASE 1.a)
+- [ ] Develop POST /customers endpoint. (USE CASE 1.b)
+- [ ] Develop GET /customers/:id endpoint. (USE CASE 1.c)
+- [ ] Develop PUT /customers/:id endpoint. (USE CASE 1.d)
+- [ ] Develop POST /orders/:id/tasks endpoint. (USE CASE 2.a)
+- [ ] Develop GET /orders endpoint. (USE CASE 2.b)
+- [ ] Develop GET /orders/:id endpoint. (USE CASE 2.c)
+- [ ] Develop PUT /tasks/:id endpoint. (USE CASE 2.d)
+- [ ] Develop GET /customers endpoint. (USE CASE 3.a)
+- [ ] Develop GET /orders/sales endpoint. (USE CASE 3.b)
