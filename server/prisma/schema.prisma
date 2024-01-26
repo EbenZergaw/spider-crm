@@ -9,3 +9,77 @@ datasource db {
   provider = "postgresql"
   url      = "postgres://postgres.flvdelejazkekcwltggi:mDS8uVVIQbgF7HmN@aws-0-us-west-1.pooler.supabase.com:6543/postgres"
 }
+
+model Customer {
+  customerID  String    @id
+  companyName String
+  contactName String
+  phoneNumber String
+  email       String
+  stage       CustomerStage
+  orders      Order[]
+  date        DateTime
+  tags        String[]
+  location    String
+  details     String
+}
+
+enum CustomerStage {
+  PROSPECTING
+  QUALIFIED
+  PRESENTING
+  PROCESSING
+  CLOSED_WON
+  CLOSED_LOST
+}
+
+model Order {
+  orderID    String       @id
+  customerID String
+  customer   Customer     @relation(fields: [customerID], references: [customerID])
+  orderType  OrderType
+  status     OrderStatus
+  items      Json
+  serviceFee Int
+  tasks      Task[]
+  details    String
+  delivery   DateTime
+}
+
+enum OrderType {
+  PRODUCT_PURCHASE
+  INSTALLATION
+  MAINTENANCE
+  CONSULTATION
+  CUSTOM_SERVICE
+}
+
+enum OrderStatus {
+  NOT_STARTED
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+}
+
+model Task {
+  taskID   String      @id
+  orderID  String
+  order    Order       @relation(fields: [orderID], references: [orderID])
+  status   TaskStatus
+  assignee String
+  priority Priority
+  deadline DateTime
+  details  String
+}
+
+enum TaskStatus {
+  NOT_STARTED
+  IN_PROGRESS
+  COMPLETED
+}
+
+enum Priority {
+  LOW
+  MEDIUM
+  HIGH
+}
