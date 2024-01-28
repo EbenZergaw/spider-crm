@@ -518,7 +518,7 @@ I've come to notice with my previous experiences that project management is just
 
 ### Build API
 - [x] Install express and Prisma, set up connection with Supabase
-- [ ] Define Prisma schemas
+- [x] Define Prisma schemas
 - [ ] Develop POST /orders endpoint. (USE CASE 1.a)
 - [ ] Develop POST /customers endpoint. (USE CASE 1.b)
 - [ ] Develop GET /customers/:id endpoint. (USE CASE 1.c)
