@@ -526,7 +526,7 @@ I've come to notice with my previous experiences that project management is just
 - [x] Develop POST /customers endpoint. (USE CASE 1.b)
 - [x] Develop GET /customers/:id endpoint. (USE CASE 1.c)
 - [x] Develop PUT /customers/:id endpoint. (USE CASE 1.d)
-- [ ] Develop POST /orders/:id/tasks endpoint. (USE CASE 2.a)
+- [x] Develop POST /orders/:id/tasks endpoint. (USE CASE 2.a)
 - [ ] Develop GET /orders endpoint. (USE CASE 2.b)
 - [ ] Develop GET /orders/:id endpoint. (USE CASE 2.c)
 - [ ] Develop PUT` /tasks/:id endpoint. (USE CASE 2.d)
