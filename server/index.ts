@@ -160,6 +160,30 @@ app.put('/customers/:id', jsonParser, async (req: Request, res: Response) => {
     
 })
 
+// ADD TASKS TO AN ORDER
+app.post('/orders/:id/tasks', jsonParser, async (req: Request, res: Response) => {
+
+    const id = req.params.id;
+
+    const taskList = req.body
+    
+    try {
+
+        taskList.forEach((task: any) => {
+            task.orderID = id
+        })
+        
+        const tasks = await prisma.task.createMany({
+            data: taskList
+        })
+
+        res.status(200).json("Tasks created successfully")
+    } catch (error) {
+        console.log(error)
+        res.status(500).json("Internal Server Error")
+    }
+})
+
 app.listen(port, () => {
   console.log(`[server]: Server is running at http://localhost:${port}`);
 });

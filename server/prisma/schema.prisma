@@ -62,7 +62,7 @@ enum OrderStatus {
 }
 
 model Task {
-  taskID   String      @id
+  taskID   Int      @id @default(autoincrement())
   orderID  String
   order    Order       @relation(fields: [orderID], references: [orderID])
   status   TaskStatus
