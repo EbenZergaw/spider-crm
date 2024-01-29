@@ -212,7 +212,7 @@ Now that the use cases are granularized, I have a much clearer idea of the data 
 - serviceFee - Int
 - tasks - Array of Tasks
 - details - String
-- delivery Date - String
+- delivery - String
 
 ### Task Schema
 - taskID - String
@@ -228,7 +228,7 @@ Now that the use cases are granularized, I have a much clearer idea of the data 
     MEDIUM,
     HIGH
 }
-- deadline - Date
+- deadline - String
 - details - String
 
 ## API Endpoints
@@ -519,8 +519,8 @@ I've come to notice with my previous experiences that project management is just
 ### Build API
 - [x] Install express and Prisma, set up connection with Supabase
 - [x] Define Prisma schemas
-- [ ] Develop POST /orders endpoint. (USE CASE 1.a)
-- [ ] Develop POST /customers endpoint. (USE CASE 1.b)
+- [x] Develop POST /orders endpoint. (USE CASE 1.a)
+- [x] Develop POST /customers endpoint. (USE CASE 1.b)
 - [ ] Develop GET /customers/:id endpoint. (USE CASE 1.c)
 - [ ] Develop PUT /customers/:id endpoint. (USE CASE 1.d)
 - [ ] Develop POST /orders/:id/tasks endpoint. (USE CASE 2.a)

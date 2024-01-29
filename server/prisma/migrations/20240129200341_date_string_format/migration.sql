@@ -1,0 +1,5 @@
+-- AlterTable
+ALTER TABLE "Customer" ALTER COLUMN "date" SET DATA TYPE TEXT;
+
+-- AlterTable
+ALTER TABLE "Task" ALTER COLUMN "deadline" SET DATA TYPE TEXT;

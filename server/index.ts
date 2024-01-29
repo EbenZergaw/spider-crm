@@ -7,12 +7,9 @@ const prisma = new PrismaClient()
 
 const app: Express = express();
 const port = 4000;
-
-
 var jsonParser = bodyParser.json()
 
-app.post("/orders", jsonParser, (req: Request, res: Response) => {
-
+app.post("/orders", jsonParser, async (req: Request, res: Response) => {
     try {
         const {
             orderID,
@@ -24,9 +21,9 @@ app.post("/orders", jsonParser, (req: Request, res: Response) => {
             tasks,
             details,
             delivery
-        } = req.body
-    
-        prisma.order.create({
+        } = req.body;
+
+        const order = await prisma.order.create({
             data: {
                 orderID,
                 customerID,
@@ -34,24 +31,61 @@ app.post("/orders", jsonParser, (req: Request, res: Response) => {
                 status,
                 items,
                 serviceFee,
-                // tasks,
+                tasks: {
+                    create: tasks
+                },
                 details,
                 delivery
             }
-        })
-        .then((data) => {
-            console.log(data);
-        })
-      res.send(req.body);
-        
+        });
+
+        res.json(order); 
     } catch (error) {
-        res.status(400).send("ERROR")
+        console.error("Failed to create order:", error);
+        res.status(500).send("Internal Server Error");
     }
-    
 });
 
-app.get("/test", (req: Request, res: Response) => {
-    res.send("lets go");
+app.post("/customers", jsonParser, async (req: Request, res: Response) => {
+    try {
+        const  {
+            customerID,
+            companyName,
+            contactName,
+            phoneNumber,
+            email,
+            stage,
+            orders,
+            date,
+            tags,
+            location,
+            details,
+        } = req.body;
+
+        const customer = await prisma.customer.create({
+            data: {
+                customerID,
+                companyName,
+                contactName,
+                phoneNumber,
+                email,
+                stage,
+                orders: {
+                    create: orders
+                },
+                date,
+                tags,
+                location,
+                details
+            }
+        })
+
+        res.json(customer); 
+        
+    } catch (error) {
+        console.error("Failed to create order:", error);
+        res.status(500).send("Internal Server Error");
+    }
 });
 
 app.listen(port, () => {

@@ -18,7 +18,7 @@ model Customer {
   email       String
   stage       CustomerStage
   orders      Order[]
-  date        DateTime
+  date        String
   tags        String[]
   location    String
   details     String
@@ -43,7 +43,7 @@ model Order {
   serviceFee Int
   tasks      Task[]
   details    String
-  delivery   DateTime
+  delivery   String
 }
 
 enum OrderType {
@@ -68,7 +68,7 @@ model Task {
   status   TaskStatus
   assignee String
   priority Priority
-  deadline DateTime
+  deadline String
   details  String
 }
 
