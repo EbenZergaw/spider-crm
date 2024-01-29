@@ -9,6 +9,7 @@ const app: Express = express();
 const port = 4000;
 var jsonParser = bodyParser.json()
 
+// CREATE ORDER
 app.post("/orders", jsonParser, async (req: Request, res: Response) => {
     try {
         const {
@@ -46,6 +47,7 @@ app.post("/orders", jsonParser, async (req: Request, res: Response) => {
     }
 });
 
+// CREATE CUSTOMER
 app.post("/customers", jsonParser, async (req: Request, res: Response) => {
     try {
         const  {
@@ -78,13 +80,85 @@ app.post("/customers", jsonParser, async (req: Request, res: Response) => {
             }
         })
 
-        res.json(customer); 
+        res.json(customer.customerID); 
         
     } catch (error) {
         console.error("Failed to create order:", error);
         res.status(500).send("Internal Server Error");
     }
 });
+
+// GET CUSTOMER
+app.get('/customers/:id', async (req: Request, res: Response) => {
+
+    const id = req.params.id;
+
+    try {
+        
+        const customer = await prisma.customer.findUnique({
+            where: {
+                customerID: id
+            }
+        })
+
+        if(customer == null){
+            res.status(404).json("Customer not found")
+        } else {
+            res.json(customer)
+        }
+
+    } catch (error) {
+        res.status(500).send("Internal Server Error")
+    }
+    
+})
+
+// UPDATE CUSTOMER
+app.put('/customers/:id', jsonParser, async (req: Request, res: Response) => {
+
+    const id = req.params.id;
+
+    const {
+        companyName,
+        contactName,
+        phoneNumber,
+        email,
+        stage,
+        tags,
+        location,
+        details,
+    } = req.body;
+
+    try {
+
+        const updatePayload: any = {};
+        if (companyName !== undefined) updatePayload.companyName = companyName;
+        if (contactName !== undefined) updatePayload.contactName = contactName;
+        if (phoneNumber !== undefined) updatePayload.phoneNumber = phoneNumber;
+        if (email !== undefined) updatePayload.email = email;
+        if (stage !== undefined) updatePayload.stage = stage;
+        if (tags !== undefined) updatePayload.tags = tags;
+        if (location !== undefined) updatePayload.location = location;
+        if (details !== undefined) updatePayload.details = details;
+        
+        const customer = await prisma.customer.update({
+            where: {
+                customerID: id
+            },
+            data: updatePayload
+        })
+
+        if(customer == null){
+            res.status(404).json("Customer not found")
+        } else {
+            res.json(customer)
+        }
+
+    } catch (error) {
+        res.status(500).send("Internal Server Error")
+    }
+    
+})
 
 app.listen(port, () => {
   console.log(`[server]: Server is running at http://localhost:${port}`);

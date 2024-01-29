@@ -265,6 +265,9 @@ I'll outline the inputs, logic, and outputs of each endpoint. Additionally, I'll
 - If the operation succeeds, the endpoint returns the order ID which then prompts the client to redirect to the /orders/:id endpoint, which corresponds with the order ID.
 - If the operation fails, the endpoint returns the appropriate status code which displays an error message on the client.
 
+**Output:**
+- Order ID
+
 **UI Components**
 - Order data form 
 - Tasks form
@@ -319,11 +322,11 @@ I'll outline the inputs, logic, and outputs of each endpoint. Additionally, I'll
 
 **Logic:**
 - The endpoint will find the customer in the database by the customer ID, then replace it with the updated customer data.
-- If the operation succeeds, the client will redirect to the /customer/:id endpoint, which corresponds with the customer ID.
+- If the operation succeeds, the endpoint will return the customer information.
 - If the operation fails, the endpoint returns the appropriate status code which displays an error message on the client.
 
 **Output:**
-- None
+- Customer information
 
 **UI Components**
 - Customer page
@@ -521,8 +524,8 @@ I've come to notice with my previous experiences that project management is just
 - [x] Define Prisma schemas
 - [x] Develop POST /orders endpoint. (USE CASE 1.a)
 - [x] Develop POST /customers endpoint. (USE CASE 1.b)
-- [ ] Develop GET /customers/:id endpoint. (USE CASE 1.c)
-- [ ] Develop PUT /customers/:id endpoint. (USE CASE 1.d)
+- [x] Develop GET /customers/:id endpoint. (USE CASE 1.c)
+- [x] Develop PUT /customers/:id endpoint. (USE CASE 1.d)
 - [ ] Develop POST /orders/:id/tasks endpoint. (USE CASE 2.a)
 - [ ] Develop GET /orders endpoint. (USE CASE 2.b)
 - [ ] Develop GET /orders/:id endpoint. (USE CASE 2.c)
