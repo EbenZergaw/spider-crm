@@ -18,7 +18,7 @@ model Customer {
   email       String
   stage       CustomerStage
   orders      Order[]
-  date        String
+  createdAt        DateTime @default(now()) @db.Timestamptz(6)
   tags        String[]
   location    String
   details     String

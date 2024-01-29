@@ -56,7 +56,6 @@ app.post("/customers", jsonParser, async (req: Request, res: Response) => {
             email,
             stage,
             orders,
-            date,
             tags,
             location,
             details,
@@ -73,7 +72,6 @@ app.post("/customers", jsonParser, async (req: Request, res: Response) => {
                 orders: {
                     create: orders
                 },
-                date,
                 tags,
                 location,
                 details
