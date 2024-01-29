@@ -221,6 +221,30 @@ app.get('/orders/:id', async (req: Request, res: Response) => {
     }
 })
 
+// UPDATE TASK
+app.put('/orders/:orderID/tasks/:taskID', jsonParser, async (req: Request, res: Response) => {
+
+    const taskID = req.params.taskID
+    const orderID = req.params.orderID
+
+    try {
+
+        const task = await prisma.task.update({
+            where: {
+                orderID: orderID,
+                taskID: parseInt(taskID)
+            },
+            data: req.body
+        })
+        
+        res.status(200).json(task)
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).json("Internal Server Error")
+    }
+})
+
 app.listen(port, () => {
   console.log(`[server]: Server is running at http://localhost:${port}`);
 });

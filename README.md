@@ -243,7 +243,7 @@ Since the schemas are now defined, the next step in fleshing out the data layer 
 | 2.a         | Creating and Assigning Tasks               | ORDER, TASK | POST   | /orders/:id/tasks|
 | 2.b         | Viewing All Tasks and Orders               | ORDER, TASK | GET    | /orders          |
 | 2.c         | View Individual Orders                     | ORDER, TASK | GET    | /orders/:id      |
-| 2.d         | Completing Tasks                           | TASK, ORDER | PUT    | /tasks/:id       |
+| 2.d         | Completing Tasks                           | TASK, ORDER | PUT    | /orders/:orderID/tasks/:taskID       |
 | 3.a         | Viewing All Customer Information           | CUSTOMER    | GET    | /customers       |
 | 3.b         | Viewing Sales Data and Order History       | ORDER       | GET    | /orders/sales    |
 
@@ -399,7 +399,7 @@ I'll outline the inputs, logic, and outputs of each endpoint. Additionally, I'll
 - Task card
 
 ### 2.d Completing or Editing Tasks
-**Endpoint: /tasks/:id**
+**Endpoint: /orders/:orderID/tasks/:taskID**
 
 **Method: PUT**
 
@@ -529,7 +529,7 @@ I've come to notice with my previous experiences that project management is just
 - [x] Develop POST /orders/:id/tasks endpoint. (USE CASE 2.a)
 - [x] Develop GET /orders endpoint. (USE CASE 2.b)
 - [x] Develop GET /orders/:id endpoint. (USE CASE 2.c)
-- [ ] Develop PUT /tasks/:id endpoint. (USE CASE 2.d)
+- [x] Develop PUT /orders/:orderID/tasks/:taskID endpoint. (USE CASE 2.d)
 - [ ] Develop GET /customers endpoint. (USE CASE 3.a)
 - [ ] Develop GET /orders/sales endpoint. (USE CASE 3.b)
 - [ ] Test APIs using Postman and make necessary changes
