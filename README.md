@@ -527,9 +527,9 @@ I've come to notice with my previous experiences that project management is just
 - [x] Develop GET /customers/:id endpoint. (USE CASE 1.c)
 - [x] Develop PUT /customers/:id endpoint. (USE CASE 1.d)
 - [x] Develop POST /orders/:id/tasks endpoint. (USE CASE 2.a)
-- [ ] Develop GET /orders endpoint. (USE CASE 2.b)
-- [ ] Develop GET /orders/:id endpoint. (USE CASE 2.c)
-- [ ] Develop PUT` /tasks/:id endpoint. (USE CASE 2.d)
+- [x] Develop GET /orders endpoint. (USE CASE 2.b)
+- [x] Develop GET /orders/:id endpoint. (USE CASE 2.c)
+- [ ] Develop PUT /tasks/:id endpoint. (USE CASE 2.d)
 - [ ] Develop GET /customers endpoint. (USE CASE 3.a)
 - [ ] Develop GET /orders/sales endpoint. (USE CASE 3.b)
 - [ ] Test APIs using Postman and make necessary changes

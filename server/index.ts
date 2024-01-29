@@ -184,6 +184,43 @@ app.post('/orders/:id/tasks', jsonParser, async (req: Request, res: Response) =>
     }
 })
 
+// GET ALL ORDERS
+app.get('/orders', async (req: Request, res: Response) => {
+    try {
+        
+        const orders = await prisma.order.findMany({
+            select: {
+                orderID: true
+            }
+        })
+        res.status(200).json(orders)
+    } catch (error) {
+        console.log(error)
+        res.status(500).json("Internal Server Error")
+    }
+})
+
+// GET SPECIFIC ORDER
+app.get('/orders/:id', async (req: Request, res: Response) => {
+
+    const id = req.params.id
+
+    try {
+        const order = await prisma.order.findUnique({
+            where: {
+                orderID: id
+            },
+            include: {
+                tasks: true
+            }
+        })
+        res.status(200).json(order)
+    } catch (error) {
+        console.log(error);
+        res.status(500).json("Internal Server Error")
+    }
+})
+
 app.listen(port, () => {
   console.log(`[server]: Server is running at http://localhost:${port}`);
 });
