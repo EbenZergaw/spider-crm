@@ -200,27 +200,6 @@ app.get('/orders', async (req: Request, res: Response) => {
     }
 })
 
-// GET SPECIFIC ORDER
-app.get('/orders/:id', async (req: Request, res: Response) => {
-
-    const id = req.params.id
-
-    try {
-        const order = await prisma.order.findUnique({
-            where: {
-                orderID: id
-            },
-            include: {
-                tasks: true
-            }
-        })
-        res.status(200).json(order)
-    } catch (error) {
-        console.log(error);
-        res.status(500).json("Internal Server Error")
-    }
-})
-
 // UPDATE TASK
 app.put('/orders/:orderID/tasks/:taskID', jsonParser, async (req: Request, res: Response) => {
 
@@ -239,6 +218,100 @@ app.put('/orders/:orderID/tasks/:taskID', jsonParser, async (req: Request, res: 
         
         res.status(200).json(task)
 
+    } catch (error) {
+        console.log(error);
+        res.status(500).json("Internal Server Error")
+    }
+})
+
+// GET ALL CUSTOMERS
+app.get('/customers', async (req: Request, res: Response) => {
+
+    try {
+        const customerIDArray = await prisma.customer.findMany({
+            select: {
+                customerID: true
+            }
+        })
+
+        res.status(200).json(customerIDArray)
+    } catch (error) {
+        console.log(error);
+        res.status(500).json("Internal Server Error")
+    }
+
+})
+
+// GET SALES DATA AND ORDER HISTORY
+app.get('/orders/sales', async (req: Request, res: Response) => {
+
+    try {
+        const orders = await prisma.order.findMany({
+            select: {
+                orderID: true,
+                serviceFee: true,
+                items: true,
+                status: true
+            }
+        })
+
+        let totalRevenue = 0
+        let receivableRevenue = 0
+        let lostRevenue = 0
+
+        orders.forEach((order) => {
+
+            const items = JSON.parse(JSON.stringify(order.items))
+            
+            let itemTotal = 0
+
+            items.forEach((item: any) => {
+                itemTotal += (item.unitPrice * item.quantity)
+            })
+
+            if(order.status == 'COMPLETED'){
+                totalRevenue += (order.serviceFee + itemTotal)
+            } else if (order.status == 'IN_PROGRESS'){
+                receivableRevenue += (order.serviceFee + itemTotal)
+            } else if (order.status == 'CANCELLED'){
+                lostRevenue += (order.serviceFee + itemTotal)
+            }
+
+        })
+
+        const orderIdList = orders.map((order) => {
+            return order.orderID
+        })
+
+        res.status(200).json({
+            orderIdList,
+            totalRevenue,
+            receivableRevenue,
+            lostRevenue
+        })
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).json("Internal Server Error")
+    }
+
+})
+
+// GET SPECIFIC ORDER
+app.get('/orders/:id', async (req: Request, res: Response) => {
+
+    const id = req.params.id
+
+    try {
+        const order = await prisma.order.findUnique({
+            where: {
+                orderID: id
+            },
+            include: {
+                tasks: true
+            }
+        })
+        res.status(200).json(order)
     } catch (error) {
         console.log(error);
         res.status(500).json("Internal Server Error")
