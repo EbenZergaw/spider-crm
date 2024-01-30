@@ -48,21 +48,28 @@ app.post("/orders", jsonParser, async (req: Request, res: Response) => {
 });
 
 // CREATE CUSTOMER
-app.post("/customers", jsonParser, async (req: Request, res: Response) => {
-    try {
-        const  {
-            customerID,
-            companyName,
-            contactName,
-            phoneNumber,
-            email,
-            stage,
-            orders,
-            tags,
-            location,
-            details,
-        } = req.body;
+app.post("/customers", jsonParser, async (req, res) => {
+    const {
+        customerID,
+        companyName,
+        contactName,
+        phoneNumber,
+        email,
+        stage,
+        orders = [], // Default to an empty array if not provided
+        tags,
+        location,
+        details,
+    } = req.body;
 
+    // Data validation (basic example, consider using a library like Joi or Yup for more comprehensive validation)
+    if (!customerID || !companyName || !contactName || !email) {
+        return res.status(400).send("Required fields are missing");
+    }
+
+    // More detailed validation can be added here for each field
+
+    try {
         const customer = await prisma.customer.create({
             data: {
                 customerID,
@@ -71,19 +78,32 @@ app.post("/customers", jsonParser, async (req: Request, res: Response) => {
                 phoneNumber,
                 email,
                 stage,
+                // Handling orders, ensuring it's correctly formatted for nested create
                 orders: {
-                    create: orders
+                    create: orders.map((order : any) => ({
+                        orderID: order.orderID,
+                        orderType: order.orderType,
+                        status: order.status,
+                        items: order.items,
+                        serviceFee: order.serviceFee,
+                        details: order.details,
+                        delivery: order.delivery,
+                        tasks: {
+                            create: order.tasks // Assuming tasks is an array of task objects
+                        }
+                    }))
                 },
                 tags,
                 location,
                 details
             }
-        })
+        });
 
-        res.json(customer.customerID); 
+        res.json({ customerID: customer.customerID });
         
     } catch (error) {
-        console.error("Failed to create order:", error);
+        console.error("Failed to create customer:", error);
+        
         res.status(500).send("Internal Server Error");
     }
 });
