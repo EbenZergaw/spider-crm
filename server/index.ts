@@ -281,7 +281,7 @@ app.get('/orders/sales', async (req: Request, res: Response) => {
 
         orders.forEach((order) => {
 
-            const items = JSON.parse(JSON.stringify(order.items))
+            let items = JSON.parse(JSON.stringify(order.items))
             
             let itemTotal = 0
 
