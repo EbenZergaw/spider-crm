@@ -534,5 +534,5 @@ I've come to notice with my previous experiences that project management is just
 - [x] Develop GET /orders/sales endpoint. (USE CASE 3.b)
 - [ ] Test APIs using Postman and make necessary changes
 
-### UI Design
-Now that I have a working API, the next steps will be to create the frontend. In my previous projects, I had a habit of skipping over the design stage and going straight into developing the UI. For this project, I want to be more deliberate and methodological in building this web app. 
+### UI/UX Design
+Now that I have a working API, the next steps will be to create the frontend. In my previous projects, I had a habit of skipping over the design stage and going straight into developing the UI. For this project, I want to be more deliberate and methodological in building this web app. Design should be valued just as much as development. And I seek to not only be an excellent developer but also an excellent designer. That comes with practice.
