@@ -514,7 +514,7 @@ I've used Prisma for my previous project and had a great experience using it. Th
 ## Project Management
 I've come to notice with my previous experiences that project management is just as important as design and technical aspects. Being able to organize all my tasks and thoughts in one centralized place is a necessary overhead for creating progress. For this project, I'll manage everything within this document and add tasks I move forward. Now that I have a solid reference for my entire backend, I'll begin development.
 
-### Build API
+## API Development Tasks
 - [x] Install express and Prisma, set up connection with Supabase
 - [x] Define Prisma schemas
 - [x] Develop POST /orders endpoint. (USE CASE 1.a)
@@ -529,12 +529,28 @@ I've come to notice with my previous experiences that project management is just
 - [x] Develop GET /orders/sales endpoint. (USE CASE 3.b)
 - [x] Test APIs using Postman and make necessary changes
 
-### UI/UX Design
+## UI/UX Design
 Now that I have a working API, the next steps will be to create the frontend. In my previous projects, I had a habit of skipping over the design stage and going straight into developing the UI. For this project, I want to be more deliberate and methodological in building this web app. Design should be valued just as much as development. And I seek to not only be an excellent developer but also an excellent designer. That comes with practice.
 
 My approach for the design stage will be to create user flow diagrams for each use case. I'll then destructure each use case into specific pages, and then break up the pages into individual components. From there, I will draft low-fidelity mockups for a visual proof of concept and make changes as necessary.
 
-## User Flow Diagrams
+### User Flow Diagrams
 ![](readme_assets/use-case-1-user-flow.jpg)
 ![](readme_assets/use-case-2-user-flow.jpg)
 ![](readme_assets/use-case-3-user-flow.jpg)
+
+### Pages and Components
+| Use Case ID | Description                                | Pages                 | Components              |
+|-------------|--------------------------------------------|-----------------------|-------------------------|
+| 1.a         | Creating New Orders and Service Requests   | Orders Dashboard      | Order Input Form, Tasks Input Form |
+| 1.b         | Entering New Customer Information          | Customer Dashboard    | Customer Input Form, Order Input Form, Tasks Input Form |
+| 1.c         | Viewing Singular Customer Information      | Customer Page         | Customer Info, Orders Data Grid |
+| 1.d         | Updating Customer Information              | Customer Page         | Customer Info, Customer Input Form |
+| 2.a         | Creating and Assigning Tasks               | Orders Dashboard      | Order Card, Task Data Grid |
+| 2.b         | Viewing All Tasks and Orders               | Orders Dashboard      | Orders Data Grid, Task Data Grid |
+| 2.c         | View Individual Orders                     | Order Details Page    | Order Card |
+| 2.d         | Completing Tasks                           | Orders Dashboard      | Order Card, Task Data Grid |
+| 3.a         | Viewing All Customer Information           | Customer Dashboard    | Customer Data Grid |
+| 3.b         | Viewing Sales Data and Order History       | Analytics Dashboard   | Stats Card, Customer Data Grid, Orders Data Grid|
+
+### Low Fidelity Wireframes
