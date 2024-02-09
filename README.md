@@ -532,7 +532,6 @@ I've come to notice with my previous experiences that project management is just
 - [x] Develop PUT /orders/:orderID/tasks/:taskID endpoint. (USE CASE 2.d)
 - [x] Develop GET /customers endpoint. (USE CASE 3.a)
 - [x] Develop GET /orders/sales endpoint. (USE CASE 3.b)
-- [ ] Develop error handling for all endpoints
 - [ ] Test APIs using Postman and make necessary changes
 
 ### UI/UX Design
