@@ -473,7 +473,7 @@ Firstly, the way the endpoints are organized is by the use case and not the reso
 
 A step I skipped is planning the flow of the users actions as they use the application. Logically, the first step would be to create a customer in the CRM and that should be use case 1.a, instead of creating an order which depends on having a customer in the database. 
 
-I'll complete the user flow diagram next. This will also further help me in organizing the frontend too since I'll have a better reference point for how the user will be interacting with the software chronologically.
+I'll complete the user flow diagrams which will help me in organizing the frontend too since I'll have a better reference point for how the user will be interacting with the software chronologically.
 
 Another consideration I've had is the behavior of the endpoints when the client would be fetching customers and the orders associated with them (use case 1.c). One option would be to have the client and their orders bundled together in the response, but this could negatively impact the user experience, especially if there is a large quantity of orders.
 
@@ -482,11 +482,6 @@ The other option, and the one I'll be implementing, is to return just the custom
 This would separate the concerns of the customer data and the order data to different components. However, this would mean there would be more requests for the server to handle. Instead of one request with all the data, there will be a request for each order. The server will have to process multiple requests with a smaller payload instead of a single massive request. The trade off here is quantity instead of size.
 
 The reason I'll be doing it this way is because I don't the user waiting a long time for the request. At least with the skeletons, the user will see each subsequent request being completed instead of waiting on a loading screen. For a customer with a handful of orders it won't make much of a difference, but if the customer has made hundreds of orders, then its necessary to have a separate request for each order. None of these problems are going to exist since the scope of this project doesn't cover deployment, but I think its good to keep scalability in mind when developing this.
-
-## User Flow Diagrams
-![](readme_assets/use-case-1-user-flow.jpg)
-![](readme_assets/use-case-2-user-flow.jpg)
-![](readme_assets/use-case-3-user-flow.jpg)
 
 ## Tech Stack
 Learning new technologies and refining my skills for the ones I use are some of the biggest motivators I had for this project. The pace of advancement of technology, and specifically the JavaScript ecosystem, is a driving factor for learning and growth. The following are the frameworks, libraries, and tools that I will be using for this project.
@@ -532,7 +527,14 @@ I've come to notice with my previous experiences that project management is just
 - [x] Develop PUT /orders/:orderID/tasks/:taskID endpoint. (USE CASE 2.d)
 - [x] Develop GET /customers endpoint. (USE CASE 3.a)
 - [x] Develop GET /orders/sales endpoint. (USE CASE 3.b)
-- [ ] Test APIs using Postman and make necessary changes
+- [x] Test APIs using Postman and make necessary changes
 
 ### UI/UX Design
 Now that I have a working API, the next steps will be to create the frontend. In my previous projects, I had a habit of skipping over the design stage and going straight into developing the UI. For this project, I want to be more deliberate and methodological in building this web app. Design should be valued just as much as development. And I seek to not only be an excellent developer but also an excellent designer. That comes with practice.
+
+My approach for the design stage will be to create user flow diagrams for each use case. I'll then destructure each use case into specific pages, and then break up the pages into individual components. From there, I will draft low-fidelity mockups for a visual proof of concept and make changes as necessary.
+
+## User Flow Diagrams
+![](readme_assets/use-case-1-user-flow.jpg)
+![](readme_assets/use-case-2-user-flow.jpg)
+![](readme_assets/use-case-3-user-flow.jpg)

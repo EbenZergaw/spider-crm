@@ -231,7 +231,7 @@ app.put('/orders/:orderID/tasks/:taskID', jsonParser, async (req: Request, res: 
         const task = await prisma.task.update({
             where: {
                 orderID: orderID,
-                taskID: parseInt(taskID)
+                taskID: taskID
             },
             data: req.body
         })
@@ -290,6 +290,7 @@ app.get('/orders/sales', async (req: Request, res: Response) => {
             })
 
             if(order.status == 'COMPLETED'){
+                console.log(order.serviceFee, itemTotal)
                 totalRevenue += (order.serviceFee + itemTotal)
             } else if (order.status == 'IN_PROGRESS'){
                 receivableRevenue += (order.serviceFee + itemTotal)
