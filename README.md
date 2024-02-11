@@ -553,4 +553,6 @@ My approach for the design stage will be to create user flow diagrams for each u
 | 3.a         | Viewing All Customer Information           | Customer Dashboard    | Customer Data Grid |
 | 3.b         | Viewing Sales Data and Order History       | Analytics Dashboard   | Stats Card, Customer Data Grid, Orders Data Grid|
 
+![](readme_assets/component-overview.png)
+
 ### Low Fidelity Wireframes
