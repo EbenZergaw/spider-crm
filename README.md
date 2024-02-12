@@ -556,3 +556,7 @@ My approach for the design stage will be to create user flow diagrams for each u
 ![](readme_assets/component-overview.png)
 
 ### Low Fidelity Wireframes
+
+### Branding
+
+### High Fidelity Wireframes
