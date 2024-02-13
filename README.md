@@ -542,14 +542,14 @@ My approach for the design stage will be to create user flow diagrams for each u
 ### Pages and Components
 | Use Case ID | Description                                | Pages                 | Components              |
 |-------------|--------------------------------------------|-----------------------|-------------------------|
-| 1.a         | Creating New Orders and Service Requests   | Orders Dashboard      | Order Input Form, Tasks Input Form |
+| 1.a         | Creating New Orders and Service Requests   | Projects Dashboard      | Order Input Form, Tasks Input Form |
 | 1.b         | Entering New Customer Information          | Customer Dashboard    | Customer Input Form, Order Input Form, Tasks Input Form |
 | 1.c         | Viewing Singular Customer Information      | Customer Dashboard    | Customer Info, Orders Data Grid |
 | 1.d         | Updating Customer Information              | Customer Dashboard    | Customer Info, Customer Input Form |
-| 2.a         | Creating and Assigning Tasks               | Orders Dashboard      | Order Card, Task Data Grid |
-| 2.b         | Viewing All Tasks and Orders               | Orders Dashboard      | Orders Data Grid, Task Data Grid |
-| 2.c         | View Individual Orders                     | Orders Dashboard       | Order Card |
-| 2.d         | Completing Tasks                           | Orders Dashboard      | Order Card, Task Data Grid |
+| 2.a         | Creating and Assigning Tasks               | Projects Dashboard      | Order Card, Task Data Grid |
+| 2.b         | Viewing All Tasks and Orders               | Projects Dashboard      | Orders Data Grid, Task Data Grid |
+| 2.c         | View Individual Orders                     | Projects Dashboard       | Order Card |
+| 2.d         | Completing Tasks                           | Projects Dashboard      | Order Card, Task Data Grid |
 | 3.a         | Viewing All Customer Information           | Customer Dashboard    | Customer Data Grid |
 | 3.b         | Viewing Sales Data and Order History       | Analytics Dashboard   | Stats Card, Customer Data Grid, Orders Data Grid|
 
@@ -557,6 +557,7 @@ My approach for the design stage will be to create user flow diagrams for each u
 
 ### Low Fidelity Wireframes
 
-### Branding
+### Color, Typography, Icons
 
 ### High Fidelity Wireframes
+
