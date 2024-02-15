@@ -63,6 +63,7 @@ enum OrderStatus {
 
 model Task {
   taskID   String @unique @id
+  taskName String @default("New Task")
   orderID  String
   order    Order       @relation(fields: [orderID], references: [orderID])
   status   TaskStatus

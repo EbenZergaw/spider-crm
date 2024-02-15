@@ -216,6 +216,7 @@ Now that the use cases are granularized, I have a much clearer idea of the data 
 
 ### Task Schema
 - taskID - String
+- taskName String
 - orderID - Order orderID
 - status Enum {
     NOT_STARTED,
