@@ -558,6 +558,8 @@ My approach for the design stage will be to create user flow diagrams for each u
 
 ### Low Fidelity Wireframes
 
+### Frontend Prototype
+
 ### Color, Typography, Icons
 Icons: Line Awesome
 
