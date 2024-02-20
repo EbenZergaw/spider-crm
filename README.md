@@ -1,7 +1,7 @@
 # Spider CRM
 My goal with this project is to experiment with different technologies, paradigms, and software development approaches.
 I especially want to practice object oriented design in the context of a fullstack web app. Additionally, I also want to practice my UI/UX design and project management skills. I'll be more deliberate and organized with this project as a way for me to explore and practice product management from design to development.
-
+   
 For this project, I will:
 - Craft user personas and use cases to inform product decisions
 - Plan out a roadmap of features, components, and tasks
